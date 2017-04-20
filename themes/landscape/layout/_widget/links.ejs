@@ -1,0 +1,11 @@
+<% if (site.data.links){ %>
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+      <ul class="widget entry">
+        <% for (var i in site.data.links){ %>
+          <li class='link'><a href='<%- site.data.links[i] %>'><%= i %></a></li>
+        <% } %>
+      </ul>
+  </div>
+<% } %>
+

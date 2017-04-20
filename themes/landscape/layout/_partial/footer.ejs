@@ -1,0 +1,13 @@
+<footer id="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <%= __('powered_by') %><br>
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+      ICP 备案号：京-404 Not Found
+    </div>
+  </div>
+
+</footer>
