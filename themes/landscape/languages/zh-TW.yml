@@ -1,17 +1,17 @@
-categories: 分类
+categories: 文章分类
 search: 搜索
 tags: 标签
-tagcloud: 标签云
+tagcloud: 标签云图
 tweets: 推文
 prev: 上一页
 next: 下一页
 comment: 留言
-archive_a: 归档
+archive_a: 日期归档
 archive_b: 归档：%s
 page: 第 %d 页
 recent_posts: 最新文章
-newer: 向前
-older: 向后
+newer: 前一篇
+older: 后一篇
 share: 分享
 powered_by: Tech begets love，Coding perfect world。
 rss_feed: RSS订阅
