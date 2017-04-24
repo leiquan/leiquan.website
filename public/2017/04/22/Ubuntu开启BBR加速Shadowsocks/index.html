@@ -11,21 +11,21 @@
 然而，做一头被围在墙里的困兽，总是让人心有不甘的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu开启BBR加速Shadowsocks">
-<meta property="og:url" content="https://leiquan.website/2017/04/24/Ubuntu开启BBR加速Shadowsocks/index.html">
+<meta property="og:url" content="https://leiquan.website/2017/04/22/Ubuntu开启BBR加速Shadowsocks/index.html">
 <meta property="og:site_name" content="雷全的个人网站">
 <meta property="og:description" content="我们都知道：天朝，是个神奇的地方。
 在这里，领导人讲句话都是要认真学习的；在这里，有个叫做谷歌的网站从来都上不去；在这里，大家都是要为了某项事业奋斗终身的；在这里，我们知道有个看不见摸不着的东西叫做“墙”。
 然而，做一头被围在墙里的困兽，总是让人心有不甘的。">
-<meta property="og:image" content="https://leiquan.website/2017/04/24/Ubuntu开启BBR加速Shadowsocks/开启BBR.png">
-<meta property="og:image" content="https://leiquan.website/2017/04/24/Ubuntu开启BBR加速Shadowsocks/未开启BBR.png">
-<meta property="og:image" content="https://leiquan.website/2017/04/24/Ubuntu开启BBR加速Shadowsocks/午夜最快时刻.png">
-<meta property="og:updated_time" content="2017-04-24T06:14:24.000Z">
+<meta property="og:image" content="https://leiquan.website/2017/04/22/Ubuntu开启BBR加速Shadowsocks/开启BBR.png">
+<meta property="og:image" content="https://leiquan.website/2017/04/22/Ubuntu开启BBR加速Shadowsocks/未开启BBR.png">
+<meta property="og:image" content="https://leiquan.website/2017/04/22/Ubuntu开启BBR加速Shadowsocks/午夜最快时刻.png">
+<meta property="og:updated_time" content="2017-04-24T15:04:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu开启BBR加速Shadowsocks">
 <meta name="twitter:description" content="我们都知道：天朝，是个神奇的地方。
 在这里，领导人讲句话都是要认真学习的；在这里，有个叫做谷歌的网站从来都上不去；在这里，大家都是要为了某项事业奋斗终身的；在这里，我们知道有个看不见摸不着的东西叫做“墙”。
 然而，做一头被围在墙里的困兽，总是让人心有不甘的。">
-<meta name="twitter:image" content="https://leiquan.website/2017/04/24/Ubuntu开启BBR加速Shadowsocks/开启BBR.png">
+<meta name="twitter:image" content="https://leiquan.website/2017/04/22/Ubuntu开启BBR加速Shadowsocks/开启BBR.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -82,8 +82,8 @@
       <div class="outer">
         <section id="main"><article id="post-Ubuntu开启BBR加速Shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/24/Ubuntu开启BBR加速Shadowsocks/" class="article-date">
-  <time datetime="2017-04-24T05:39:04.000Z" itemprop="datePublished">2017-04-24</time>
+    <a href="/2017/04/22/Ubuntu开启BBR加速Shadowsocks/" class="article-date">
+  <time datetime="2017-04-22T05:39:04.000Z" itemprop="datePublished">2017-04-22</time>
 </a>
 
     
@@ -117,7 +117,7 @@
 <p>终于，谷歌推出了TCP BBR 拥塞控制算法，加速效果很好，于是我部署到了自己的一台服务器上。</p>
 <p>谷歌大法好。</p>
 <p>测试效果如下：</p>
-<p><img src="/2017/04/24/Ubuntu开启BBR加速Shadowsocks/开启BBR.png" alt="开启BBR"><br><img src="/2017/04/24/Ubuntu开启BBR加速Shadowsocks/未开启BBR.png" alt="未开启BBR"><br><img src="/2017/04/24/Ubuntu开启BBR加速Shadowsocks/午夜最快时刻.png" alt="午夜时刻未开启BBR"></p>
+<p><img src="/2017/04/22/Ubuntu开启BBR加速Shadowsocks/开启BBR.png" alt="开启BBR"><br><img src="/2017/04/22/Ubuntu开启BBR加速Shadowsocks/未开启BBR.png" alt="未开启BBR"><br><img src="/2017/04/22/Ubuntu开启BBR加速Shadowsocks/午夜最快时刻.png" alt="午夜时刻未开启BBR"></p>
 <p>其实，从三张图我们可以看出来，翻墙速度慢的主要问题就是国际宽带有限：午夜时刻使用的人少，不用开启就很快；白天尤其是晚上，则线路拥堵，此时BBR是能够显著提高速度的。</p>
 <p>我们来看下如何安装和使用BBR。</p>
 <h4 id="服务器环境：ubuntu-14-10-X64"><a href="#服务器环境：ubuntu-14-10-X64" class="headerlink" title="服务器环境：ubuntu 14.10 X64"></a>服务器环境：ubuntu 14.10 X64</h4><h4 id="1-升级Linux内核到4-9或以上："><a href="#1-升级Linux内核到4-9或以上：" class="headerlink" title="1.升级Linux内核到4.9或以上："></a>1.升级Linux内核到4.9或以上：</h4><p>因为BBR集成到了内核4.9中，那我们安装即可。我们在ubuntu网站找到<a href="http://kernel.ubuntu.com/~kernel-ppa/mainline" target="_blank" rel="external">下载地址</a>，下载必须的文件，我下载的是4.10.12版本内核。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.12/linux-headers-4.10.12-041012_4.10.12-041012.201704210512_all.deb</div><div class="line">wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.12/linux-headers-4.10.12-041012-generic_4.10.12-041012.201704210512_amd64.deb</div><div class="line">wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.12/linux-image-4.10.12-041012-generic_4.10.12-041012.201704210512_amd64.deb</div></pre></td></tr></table></figure></p>
@@ -147,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leiquan.website/2017/04/24/Ubuntu开启BBR加速Shadowsocks/" data-id="cj1vq71c40000v4zqjy1myf9n" class="article-share-link">分享</a>
+      <a data-url="https://leiquan.website/2017/04/22/Ubuntu开启BBR加速Shadowsocks/" data-id="cj1vq71c40000v4zqjy1myf9n" class="article-share-link">分享</a>
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BBR加速/">BBR加速</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shadowsocks/">Shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
 
@@ -226,7 +226,7 @@
           </li>
         
           <li>
-            <a href="/2017/04/24/Ubuntu开启BBR加速Shadowsocks/">Ubuntu开启BBR加速Shadowsocks</a>
+            <a href="/2017/04/22/Ubuntu开启BBR加速Shadowsocks/">Ubuntu开启BBR加速Shadowsocks</a>
           </li>
         
           <li>
