@@ -6,6 +6,7 @@ tags:
   - Ubuntu
   - BBR加速
   - Shadowsocks
+  - 服务器设置
 ---
 
 我们都知道：天朝，是个神奇的地方。
