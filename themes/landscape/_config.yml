@@ -16,11 +16,12 @@ fancybox: true
 sidebar: right
 
 widgets:
-- category
-- archive
-- recent_posts
-- tagcloud
-- links
+  - avatar
+  - category
+  - archive
+  - recent_posts
+  - tagcloud
+  - links
 
 # widget behavior
 archive_type: 'monthly'
