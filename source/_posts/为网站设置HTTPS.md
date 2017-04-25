@@ -33,8 +33,9 @@ Your certificate and chain have been saved at /etc/letsencrypt/live/leiquan.me/f
 
 ```bash
 SSLEngine on
-SSLCertificateFile /etc/letsencrypt/live/leiquan.me/fullchain.pem      
-SSLCertificateKeyFile /etc/letsencrypt/live/leiquan.me/privkey.pem
+SSLCertificateFile /etc/letsencrypt/live/leiquan.website/cert.pem
+SSLCertificateChainFile /etc/letsencrypt/live/leiquan.website/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/leiquan.website/privkey.pem
 ```
 
 然后重启服务器，就能通过 https://leiquan.me 来访问了，档次立马提升了有木有啊！
