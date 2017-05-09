@@ -998,6 +998,7 @@ a.article-title:hover {
 .archive-article-inner {
   padding: 15px;
   margin-bottom: 15px;
+  min-height: 5em;
 }
 .archive-article-title {
   text-decoration: none;
