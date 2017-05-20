@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="雷全的个人网站">
 <meta property="og:description" content="我们知道，现在几乎所有的大型网站，比如谷歌，百度等，都已经启用了全栈 HTTPS，用了 HTTPS 之后，不仅访问的时候安全性有保障，而且地址栏绿色的“安全“提示也很酷炫很让人放心。所以，咱们作为个人站长，当然也要跟上时代潮流啊。然而很不幸，HTTPS  的SSL证书通常是要钱的，并且价格不菲，因为毕竟别人给你干活发证书了嘛。
 然而互联网总是很神奇，很多优秀，很有价值的东西，通常能够免费获得。Le">
-<meta property="og:updated_time" content="2017-04-25T07:23:25.000Z">
+<meta property="og:updated_time" content="2017-05-20T15:07:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为网站设置HTTPS">
 <meta name="twitter:description" content="我们知道，现在几乎所有的大型网站，比如谷歌，百度等，都已经启用了全栈 HTTPS，用了 HTTPS 之后，不仅访问的时候安全性有保障，而且地址栏绿色的“安全“提示也很酷炫很让人放心。所以，咱们作为个人站长，当然也要跟上时代潮流啊。然而很不幸，HTTPS  的SSL证书通常是要钱的，并且价格不菲，因为毕竟别人给你干活发证书了嘛。
@@ -120,6 +120,8 @@
 <p>便可以将 http 强制跳转到https。</p>
 <p>最后重启服务器即可：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 restart</div></pre></td></tr></table></figure>
+<p>由于证书的有效期只有3个月，每三个月需要续期一次：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./letsencrypt-auto renew</div></pre></td></tr></table></figure></p>
+<p>然后重启服务器即可。</p>
 
       
     </div>

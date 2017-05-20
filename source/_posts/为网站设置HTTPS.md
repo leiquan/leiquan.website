@@ -65,3 +65,10 @@ RewriteRule   ^(.*)  https://%{SERVER_NAME}$1 [L,R]
 ```bash
 /etc/init.d/apache2 restart
 ```
+
+由于证书的有效期只有3个月，每三个月需要续期一次：
+
+```bash
+./letsencrypt-auto renew
+```
+然后重启服务器即可。
