@@ -23,6 +23,7 @@ widgets:
   - recent_posts
   - tagcloud
   - links
+  - shadowsocks
 
 # widget behavior
 archive_type: 'monthly'
