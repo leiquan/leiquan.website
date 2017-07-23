@@ -5,8 +5,6 @@ category: 服务器
 tags:
   - 服务器设置
   - LAMP
-  - Linux
-  - Apache
 ---
 
 环境：Ubuntu14.04

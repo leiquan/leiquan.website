@@ -1,12 +1,9 @@
 ---
----
 title: WikiTRIBUNE与维基精神以及“维基蓝图”的设想
 date: 2017-04-28 23:00:00
 category: 科技评论
 tags:
   - WikiTRIBUNE
-  - 维基新闻
-  - 维基百科
   - 自由精神
   - 维基蓝图
 ---
