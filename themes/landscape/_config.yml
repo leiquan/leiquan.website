@@ -18,11 +18,11 @@ sidebar: right
 
 widgets:
   - avatar
+  - shadowsocks
   - category
   - archive
   - tagcloud
   - links
-  - shadowsocks
 
 # widget behavior
 archive_type: 'monthly'
