@@ -18,7 +18,6 @@ sidebar: right
 
 widgets:
   - avatar
-  - music
   - shadowsocks
   - category
   - archive
