@@ -137,21 +137,21 @@
 })(jQuery);
 
 window.onload = function () {
-  var btn = document.getElementById('music-btn');
-  var music = document.getElementById('love-music');
-
-  var isPlay = 0;
-
-  btn.onclick = function () {
-
-    if (isPlay == 0) {
-      isPlay = 1;
-      music.play();
-    } else {
-      isPlay = 0;
-      music.pause();
-    }
-
-  };
+  // var btn = document.getElementById('music-btn');
+  // var music = document.getElementById('love-music');
+  //
+  // var isPlay = 0;
+  //
+  // btn.onclick = function () {
+  //
+  //   if (isPlay == 0) {
+  //     isPlay = 1;
+  //     music.play();
+  //   } else {
+  //     isPlay = 0;
+  //     music.pause();
+  //   }
+  //
+  // };
 
 };
