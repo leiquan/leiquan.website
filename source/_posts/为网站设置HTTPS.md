@@ -86,6 +86,8 @@ server {
         ssl_ciphers AES256+EECDH:AES256+EDH:!aNULL;
         ssl_prefer_server_ciphers  on;
 
+        listen [::]:443 ssl ipv6only=on;
+
         location / {
             ...，这里是你的原来的设置
         }
