@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://leiquan.website/2017/01/01/为网站设置HTTPS/index.html">
 <meta property="og:site_name" content="雷全的个人网站">
 <meta property="og:description" content="我们知道，现在几乎所有的大型网站，比如谷歌，百度等，都已经启用了全栈 HTTPS，用了 HTTPS 之后，不仅访问的时候安全性有保障，而且地址栏绿色的“安全“提示也很酷炫很让人放心。所以，咱们作为个人站长，当然也要跟上时代潮流啊。然而很不幸，HTTPS  的SSL证书通常是要钱的，并且价格不菲，因为毕竟别人给你干活发证书了嘛。 然而互联网总是很神奇，很多优秀，很有价值的东西，通常能够免费获得。Le">
-<meta property="og:updated_time" content="2017-07-23T07:09:18.708Z">
+<meta property="og:updated_time" content="2017-08-23T04:25:22.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为网站设置HTTPS">
 <meta name="twitter:description" content="我们知道，现在几乎所有的大型网站，比如谷歌，百度等，都已经启用了全栈 HTTPS，用了 HTTPS 之后，不仅访问的时候安全性有保障，而且地址栏绿色的“安全“提示也很酷炫很让人放心。所以，咱们作为个人站长，当然也要跟上时代潮流啊。然而很不幸，HTTPS  的SSL证书通常是要钱的，并且价格不菲，因为毕竟别人给你干活发证书了嘛。 然而互联网总是很神奇，很多优秀，很有价值的东西，通常能够免费获得。Le">
@@ -117,11 +117,12 @@
 <p>由于证书的有效期只有3个月，每三个月需要续期一次：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./letsencrypt-auto renew</div></pre></td></tr></table></figure>
 <p>然后重启服务器即可。</p>
+<p>如果是 nginx 服务器，可以这样设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">        listen       443 ssl;</div><div class="line">        server_name  your.website;</div><div class="line"></div><div class="line">        ssl_certificate      /etc/letsencrypt/live/your.website/fullchain.pem;</div><div class="line">        ssl_certificate_key  /etc/letsencrypt/live/your.website/privkey.pem;</div><div class="line"></div><div class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</div><div class="line">        ssl_ciphers AES256+EECDH:AES256+EDH:!aNULL;</div><div class="line">        ssl_prefer_server_ciphers  on;</div><div class="line"></div><div class="line">        location / &#123;</div><div class="line">            ...，这里是你的原来的设置</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leiquan.website/2017/01/01/为网站设置HTTPS/" data-id="cj6dq3ob0000mw2zqqt944wd6" class="article-share-link">分享</a>
+      <a data-url="https://leiquan.website/2017/01/01/为网站设置HTTPS/" data-id="cj6oio186000iqczqftthqamq" class="article-share-link">分享</a>
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器设置/">服务器设置</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络安全/">网络安全</a></li></ul>
 

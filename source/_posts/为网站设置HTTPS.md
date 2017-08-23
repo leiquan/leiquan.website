@@ -72,3 +72,22 @@ RewriteRule   ^(.*)  https://%{SERVER_NAME}$1 [L,R]
 ./letsencrypt-auto renew
 ```
 然后重启服务器即可。
+
+如果是 nginx 服务器，可以这样设置：
+```bash
+server {
+        listen       443 ssl;
+        server_name  your.website;
+
+        ssl_certificate      /etc/letsencrypt/live/your.website/fullchain.pem;
+        ssl_certificate_key  /etc/letsencrypt/live/your.website/privkey.pem;
+
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers AES256+EECDH:AES256+EDH:!aNULL;
+        ssl_prefer_server_ciphers  on;
+
+        location / {
+            ...，这里是你的原来的设置
+        }
+    }
+```
