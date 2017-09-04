@@ -22,7 +22,7 @@ tags:
 修改配置文件：
 
 ```bash
-sudo vim /etc/MySQL/my.cnf
+sudo vim /etc/mysql/my.cnf
 ```
 
 在[mysqld]字段中加入一行：

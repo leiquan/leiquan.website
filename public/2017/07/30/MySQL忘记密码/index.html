@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://leiquan.website/2017/07/30/MySQL忘记密码/index.html">
 <meta property="og:site_name" content="雷全的个人网站">
 <meta property="og:description" content="为什么老是忘记了 MySQL 的密码呢，这是病，得治。我之前记在了备忘录中，但是还是不对，应该是中间被改过一次。 在自己网站上记一下，不然每次都得翻一遍。 服务器环境：ubuntu 14.10 X64">
-<meta property="og:updated_time" content="2017-07-31T01:48:50.523Z">
+<meta property="og:updated_time" content="2017-09-04T16:28:05.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL忘记密码">
 <meta name="twitter:description" content="为什么老是忘记了 MySQL 的密码呢，这是病，得治。我之前记在了备忘录中，但是还是不对，应该是中间被改过一次。 在自己网站上记一下，不然每次都得翻一遍。 服务器环境：ubuntu 14.10 X64">
@@ -98,7 +98,7 @@
 <p>在自己网站上记一下，不然每次都得翻一遍。</p>
 <h4 id="服务器环境：ubuntu-14-10-X64"><a href="#服务器环境：ubuntu-14-10-X64" class="headerlink" title="服务器环境：ubuntu 14.10 X64"></a>服务器环境：ubuntu 14.10 X64</h4><a id="more"></a>
 <h4 id="1-关掉权限："><a href="#1-关掉权限：" class="headerlink" title="1.关掉权限："></a>1.关掉权限：</h4><p>修改配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/MySQL/my.cnf</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/mysql/my.cnf</div></pre></td></tr></table></figure>
 <p>在[mysqld]字段中加入一行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">skip-grant-tables</div></pre></td></tr></table></figure>
 <h4 id="2-重启mySQL服务："><a href="#2-重启mySQL服务：" class="headerlink" title="2.重启mySQL服务："></a>2.重启mySQL服务：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service mysql restart</div></pre></td></tr></table></figure>
