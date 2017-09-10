@@ -125,4 +125,6 @@ tags:
 
 2.[如何看待 WePhone 创始人被其前妻逼到自杀？](https://www.zhihu.com/question/65089674/answer/227496966)
 
-3.[为什么网上鲜有炫富的程序员？](https://www.zhihu.com/question/30692237)
+3.[如何看待暴风影音「杀了一个程序员祭天」的版本更新说明？](https://www.zhihu.com/question/64431025/answer/220428303)
+
+4.[为什么网上鲜有炫富的程序员？](https://www.zhihu.com/question/30692237)
