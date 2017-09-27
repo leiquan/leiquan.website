@@ -1,7 +1,7 @@
 ---
 title: 从微信在iOS平台撤销打赏功能说起
 date: 2017-04-21 23:00:00
-category: 科技评论
+category: 科技与时事评论
 tags:
   - 微信
   - iOS
