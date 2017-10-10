@@ -48,7 +48,7 @@ var removeDuplicates = function(nums) {
 };
 
 
-##### 代码和注释：
+// 测试代码
 var arr =[1,2,2,3,3,3,4];
 console.log(removeDuplicates(arr));
 
