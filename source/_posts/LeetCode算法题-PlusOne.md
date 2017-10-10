@@ -15,6 +15,9 @@ You may assume the integer do not contain any leading zero, except the number 0 
 
 The digits are stored such that the most significant digit is at the head of the list.
 
+##### LeetCode URL：
+https://leetcode.com/problems/plus-one/description/
+
 <!--more-->
 
 ##### 题目大意：
