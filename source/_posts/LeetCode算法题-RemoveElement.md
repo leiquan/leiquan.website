@@ -1,7 +1,7 @@
 ---
 title: LeetCode算法题-RemoveElement
 date: 2017-10-10 18:17:04
-category: 数据结构和算法
+category: 数据结构与算法
 tags:
   - LeetCode
   - 算法
