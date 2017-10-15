@@ -1,7 +1,7 @@
 ---
 title: 一个WebUI的JS控制台工具
 date: 2017-10-15 19:56:04
-category: Web前端
+category: 前端
 tags:
   - 控制台
   - JavaScript
