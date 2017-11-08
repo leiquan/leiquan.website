@@ -13,7 +13,8 @@
 <meta property="og:url" content="https://leiquan.website/2017/01/01/为网站设置HTTPS/index.html">
 <meta property="og:site_name" content="雷全的个人网站">
 <meta property="og:description" content="我们知道，现在几乎所有的大型网站，比如谷歌，百度等，都已经启用了全栈 HTTPS，用了 HTTPS 之后，不仅访问的时候安全性有保障，而且地址栏绿色的“安全“提示也很酷炫很让人放心。所以，咱们作为个人站长，当然也要跟上时代潮流啊。然而很不幸，HTTPS  的SSL证书通常是要钱的，并且价格不菲，因为毕竟别人给你干活发证书了嘛。 然而互联网总是很神奇，很多优秀，很有价值的东西，通常能够免费获得。Le">
-<meta property="og:updated_time" content="2017-08-23T04:43:16.898Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-07T15:59:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为网站设置HTTPS">
 <meta name="twitter:description" content="我们知道，现在几乎所有的大型网站，比如谷歌，百度等，都已经启用了全栈 HTTPS，用了 HTTPS 之后，不仅访问的时候安全性有保障，而且地址栏绿色的“安全“提示也很酷炫很让人放心。所以，咱们作为个人站长，当然也要跟上时代潮流啊。然而很不幸，HTTPS  的SSL证书通常是要钱的，并且价格不菲，因为毕竟别人给你干活发证书了嘛。 然而互联网总是很神奇，很多优秀，很有价值的东西，通常能够免费获得。Le">
@@ -99,30 +100,30 @@
 <a id="more"></a>
 <p>以下为基本步骤：</p>
 <p>首先，你需要克隆这个项目到你的机器：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/letsencrypt/letsencrypt  &amp;&amp; <span class="built_in">cd</span> letsencrypt &amp;&amp; ./letsencrypt-auto</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/letsencrypt/letsencrypt  &amp;&amp; <span class="built_in">cd</span> letsencrypt &amp;&amp; ./letsencrypt-auto</span><br></pre></td></tr></table></figure>
 <p>然后，根据提示，一步步的来，最后我们看到了类似的提示，就是成功了：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Your certificate and chain have been saved at /etc/letsencrypt/live/leiquan.me/fullchain.pem</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Your certificate and chain have been saved at /etc/letsencrypt/live/leiquan.me/fullchain.pem</span><br></pre></td></tr></table></figure>
 <p>接下来，我们需要修改 apache，在 http 的虚拟主机下设置配置这三项，注意 https 的端口是443而不是80：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SSLEngine on</div><div class="line">SSLCertificateFile /etc/letsencrypt/live/leiquan.website/cert.pem</div><div class="line">SSLCertificateChainFile /etc/letsencrypt/live/leiquan.website/fullchain.pem</div><div class="line">SSLCertificateKeyFile /etc/letsencrypt/live/leiquan.website/privkey.pem</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SSLEngine on</span><br><span class="line">SSLCertificateFile /etc/letsencrypt/live/leiquan.website/cert.pem</span><br><span class="line">SSLCertificateChainFile /etc/letsencrypt/live/leiquan.website/fullchain.pem</span><br><span class="line">SSLCertificateKeyFile /etc/letsencrypt/live/leiquan.website/privkey.pem</span><br></pre></td></tr></table></figure>
 <p>然后重启服务器，就能通过 <a href="https://leiquan.me" target="_blank" rel="external">https://leiquan.me</a> 来访问了，档次立马提升了有木有啊！</p>
 <p>这个的配置是非常简单的，但是要注意的是：本证书只有90天，到期后需要更新证书并重启服务器，然而，庆幸的是，你也可以设置自动续费。</p>
 <p>如果你之前有把你的 http 域名分享出去，那么可以设置重定向，让 apache 强制 https 访问：</p>
 <p>我们需要启动 rewrite module：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a2enmod rewrite</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a2enmod rewrite</span><br></pre></td></tr></table></figure>
 <p>然后编辑 /etc/apache/sites-available/000-default.conf,在 http 对应的虚拟机下添加:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RewriteEngine on</div><div class="line">RewriteCond   %&#123;HTTPS&#125; !=on</div><div class="line">RewriteRule   ^(.*)  https://%&#123;SERVER_NAME&#125;<span class="variable">$1</span> [L,R]</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine on</span><br><span class="line">RewriteCond   %&#123;HTTPS&#125; !=on</span><br><span class="line">RewriteRule   ^(.*)  https://%&#123;SERVER_NAME&#125;<span class="variable">$1</span> [L,R]</span><br></pre></td></tr></table></figure>
 <p>便可以将 http 强制跳转到https。</p>
 <p>最后重启服务器即可：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 restart</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
 <p>由于证书的有效期只有3个月，每三个月需要续期一次：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./letsencrypt-auto renew</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./letsencrypt-auto renew</span><br></pre></td></tr></table></figure>
 <p>然后重启服务器即可。</p>
-<p>如果是 nginx 服务器，可以这样设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">        listen       443 ssl;</div><div class="line">        server_name  your.website;</div><div class="line"></div><div class="line">        ssl_certificate      /etc/letsencrypt/live/your.website/fullchain.pem;</div><div class="line">        ssl_certificate_key  /etc/letsencrypt/live/your.website/privkey.pem;</div><div class="line"></div><div class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</div><div class="line">        ssl_ciphers AES256+EECDH:AES256+EDH:!aNULL;</div><div class="line">        ssl_prefer_server_ciphers  on;</div><div class="line"></div><div class="line">        listen [::]:443 ssl ipv6only=on;</div><div class="line"></div><div class="line">        location / &#123;</div><div class="line">            ...，这里是你的原来的设置</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>如果是 nginx 服务器，可以这样设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  your.website;</span><br><span class="line"></span><br><span class="line">        ssl_certificate      /etc/letsencrypt/live/your.website/fullchain.pem;</span><br><span class="line">        ssl_certificate_key  /etc/letsencrypt/live/your.website/privkey.pem;</span><br><span class="line"></span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers AES256+EECDH:AES256+EDH:!aNULL;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        listen [::]:443 ssl ipv6only=on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            ...，这里是你的原来的设置</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leiquan.website/2017/01/01/为网站设置HTTPS/" data-id="cj9kzn16v001842zqvp8bazt7" class="article-share-link">分享</a>
+      <a data-url="https://leiquan.website/2017/01/01/为网站设置HTTPS/" data-id="cj9qgt5h8001j82s6gbg2qu4c" class="article-share-link">分享</a>
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器设置/">服务器设置</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络安全/">网络安全</a></li></ul>
 
@@ -142,9 +143,9 @@
     </a>
   
   
-    <a href="/2016/12/30/关于本人/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/12/30/关于本站/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">About Leiquan</div>
+      <div class="article-nav-title">About Leiquan.website</div>
     </a>
   
 </nav>

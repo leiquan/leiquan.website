@@ -13,7 +13,8 @@
 <meta property="og:url" content="https://leiquan.website/2017/02/01/让Apache支持中文路径/index.html">
 <meta property="og:site_name" content="雷全的个人网站">
 <meta property="og:description" content="环境：Ubuntu14.04 默认，Apache 是不支持中文路径的，如果需要支持，其实很简单。">
-<meta property="og:updated_time" content="2017-07-23T07:07:09.054Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-07T15:59:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让Apache支持中文路径">
 <meta name="twitter:description" content="环境：Ubuntu14.04 默认，Apache 是不支持中文路径的，如果需要支持，其实很简单。">
@@ -98,16 +99,16 @@
 <p>默认，Apache 是不支持中文路径的，如果需要支持，其实很简单。</p>
 <a id="more"></a>
 <p>1.安装模块</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install libapache2-mod-encoding</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install libapache2-mod-encoding</span><br></pre></td></tr></table></figure>
 <p>2.在 apache.conf配置文件添加如下配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;IfModule mod_headers.c&gt;</div><div class="line">    Header add MS-Author-Via <span class="string">'DAV'</span></div><div class="line">&lt;/IfModule&gt;</div><div class="line">&lt;IfModule mod_encoding.c&gt;</div><div class="line">    EncodingEngine on</div><div class="line">    NormalizeUsername on</div><div class="line">    SetServerEncoding GBK</div><div class="line">    DefaultClientEncoding UTF-8 GBK GB2312</div><div class="line">    AddClientEncoding <span class="string">'(Microsoft .* DAV $)'</span> UTF-8 GBK GB2312</div><div class="line">    AddClientEncoding <span class="string">'Microsoft .* DAV'</span> UTF-8 GBK GB2312</div><div class="line">    AddClientEncoding <span class="string">'Microsoft-WebDAV*'</span> UTF-8 GBK GB2312</div><div class="line">&lt;/IfModule&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule mod_headers.c&gt;</span><br><span class="line">    Header add MS-Author-Via <span class="string">'DAV'</span></span><br><span class="line">&lt;/IfModule&gt;</span><br><span class="line">&lt;IfModule mod_encoding.c&gt;</span><br><span class="line">    EncodingEngine on</span><br><span class="line">    NormalizeUsername on</span><br><span class="line">    SetServerEncoding GBK</span><br><span class="line">    DefaultClientEncoding UTF-8 GBK GB2312</span><br><span class="line">    AddClientEncoding <span class="string">'(Microsoft .* DAV $)'</span> UTF-8 GBK GB2312</span><br><span class="line">    AddClientEncoding <span class="string">'Microsoft .* DAV'</span> UTF-8 GBK GB2312</span><br><span class="line">    AddClientEncoding <span class="string">'Microsoft-WebDAV*'</span> UTF-8 GBK GB2312</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
 <p>3.最后重启服务器即可：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 restart</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leiquan.website/2017/02/01/让Apache支持中文路径/" data-id="cj9kzn1ho005342zqoat7l7r8" class="article-share-link">分享</a>
+      <a data-url="https://leiquan.website/2017/02/01/让Apache支持中文路径/" data-id="cj9qgt5im005782s6jzbqto8u" class="article-share-link">分享</a>
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LAMP/">LAMP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器设置/">服务器设置</a></li></ul>
 
