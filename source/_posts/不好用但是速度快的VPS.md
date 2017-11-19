@@ -1,7 +1,7 @@
 ---
 title: 不好用但是速度快的VPS
 date: 2017-11-18 23:57:00
-category: 生活杂录
+category: 科技与时事评论
 tags:
   - VPS
 ---
