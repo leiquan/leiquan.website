@@ -6,18 +6,18 @@
   <title>Koa Best Practice | 雷全的个人网站</title>
   <meta name="keywords" content="雷全,雷全的个人网站,雷全的个人主页,雷全的博客,leiquan,leiquan.me,leiquan.website">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="来滴滴出行后的第一个项目，是重构一个Java版本的港台网站发布系统，必须得先吐槽一下：人家Java版本的都没开发完，都开始重构，也真是醉了，真是浪费了生产力，创造了无聊的GDP。">
+  <meta name="description" content="来滴滴出行后的第一个项目，是重构一个Java版本的港台网站发布系统，必须得先吐槽一下：人家Java版本的都没开发完，都开始重构，也真是醉了，真是浪费了生产力，创造了无聊的GDP。 第一次用 KOA，总结了下项目结构和常用包，去掉了公司的所有业务代码，觉得可以用来做个 Starter。 Github">
 <meta name="keywords" content="Koa,MySQL,服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Koa Best Practice">
 <meta property="og:url" content="https://leiquan.website/2017/12/18/Koa Best Practice/index.html">
 <meta property="og:site_name" content="雷全的个人网站">
-<meta property="og:description" content="来滴滴出行后的第一个项目，是重构一个Java版本的港台网站发布系统，必须得先吐槽一下：人家Java版本的都没开发完，都开始重构，也真是醉了，真是浪费了生产力，创造了无聊的GDP。">
+<meta property="og:description" content="来滴滴出行后的第一个项目，是重构一个Java版本的港台网站发布系统，必须得先吐槽一下：人家Java版本的都没开发完，都开始重构，也真是醉了，真是浪费了生产力，创造了无聊的GDP。 第一次用 KOA，总结了下项目结构和常用包，去掉了公司的所有业务代码，觉得可以用来做个 Starter。 Github">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-18T09:44:41.000Z">
+<meta property="og:updated_time" content="2017-12-21T18:13:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Koa Best Practice">
-<meta name="twitter:description" content="来滴滴出行后的第一个项目，是重构一个Java版本的港台网站发布系统，必须得先吐槽一下：人家Java版本的都没开发完，都开始重构，也真是醉了，真是浪费了生产力，创造了无聊的GDP。">
+<meta name="twitter:description" content="来滴滴出行后的第一个项目，是重构一个Java版本的港台网站发布系统，必须得先吐槽一下：人家Java版本的都没开发完，都开始重构，也真是醉了，真是浪费了生产力，创造了无聊的GDP。 第一次用 KOA，总结了下项目结构和常用包，去掉了公司的所有业务代码，觉得可以用来做个 Starter。 Github">
   
   
     <link rel="icon" href="/css/images/me.jpg">
@@ -96,6 +96,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>来滴滴出行后的第一个项目，是重构一个Java版本的港台网站发布系统，必须得先吐槽一下：人家Java版本的都没开发完，都开始重构，也真是醉了，真是浪费了生产力，创造了无聊的GDP。</p>
+<p>第一次用 KOA，总结了下项目结构和常用包，去掉了公司的所有业务代码，觉得可以用来做个 Starter。</p>
+<p><a href="https://github.com/leiquan/Koa-Best-Practice" target="_blank" rel="noopener">Github</a></p>
 <a id="more"></a>
 <h4 id="代码结构："><a href="#代码结构：" class="headerlink" title="代码结构："></a>代码结构：</h4><p>– config 数据库及开发配置文件</p>
 <p>– logs 日志数据</p>
@@ -123,15 +125,15 @@
 <p>4.用框架，就要处理静态资源</p>
 <p>因为框架需要处理路由，但是静态资源我们没法一个个写路由，那样就比较傻了，所以就有koa-static这边来托管静态资源，我们只要把静态资源放到public文件夹里面就好了。</p>
 <p>5.路由处理</p>
-<p>这个项目里面既用到了Server端的MVC渲染模式，也使用了前后端分离的提供接口的模式，因而约定了接口数据到放在data里面，直接页面访问就在对应目录下，比如：new/data/add 表示添加新闻的数据接口，new/add则是添加新闻的页面了。</p>
-<p>因为路由很多，一个个配置很麻烦，所以写了routes.js，定义好URL和控制器的Map，直接玄幻require即可。</p>
+<p>这个项目里面既用到了Server端的MVC渲染模式，也使用了前后端分离的提供接口的模式，因而约定了接口数据到放在data里面，直接页面访问就在对应目录下，比如：news/data/add 表示添加新闻的数据接口，news/add则是添加新闻的页面了。</p>
+<p>因为路由很多，一个个配置很麻烦，所以写了routes.js，定义好URL和控制器的Map，直接循环require即可。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> routes = <span class="function"><span class="keyword">function</span> (<span class="params">router</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Map</span></span><br><span class="line">  <span class="keyword">let</span> controller = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Webhook</span></span><br><span class="line">    <span class="string">'/webhook'</span>: <span class="string">'./webhook/pull.js'</span>, <span class="comment">// http://localhost:4000/webhook</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Index, Page</span></span><br><span class="line">    <span class="string">'/'</span>: <span class="string">'./news/list'</span>, <span class="comment">// http://localhost:4000/</span></span><br><span class="line">    <span class="string">'/news/add'</span>: <span class="string">'./news/add'</span>, <span class="comment">// http://localhost:4000/news/add</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// API, Data</span></span><br><span class="line">    <span class="string">'/news/data/list'</span>: <span class="string">'./news/data/list'</span>, <span class="comment">// http://localhost:4000/news/data/list</span></span><br><span class="line">    <span class="string">'/news/data/add'</span>: <span class="string">'./news/data/add'</span>, <span class="comment">// http://localhost:4000/news/data/add</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// File Upload</span></span><br><span class="line">    <span class="string">'/file/upload/image'</span>: <span class="string">'./file/upload/image'</span>, <span class="comment">// http://localhost:4000/file/upload/image</span></span><br><span class="line"></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Load All Controllers</span></span><br><span class="line">  <span class="keyword">for</span> (x <span class="keyword">in</span> controller) &#123;</span><br><span class="line">    router.use(x, <span class="built_in">require</span>(controller[x]));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = routes;</span><br></pre></td></tr></table></figure>
 <p>6.async/await和promise<br>KOA框架的一大优点，就是方便的使用async和await。但是有时候，我们用第三方的库的时候，并不返回Promise，这时候我们需要手动封装一下Promise，比如routes/upload/image.js，因为代码比较长，就不贴了。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leiquan.website/2017/12/18/Koa Best Practice/" data-id="cjbc0iznt0005u2s64a18nq4o" class="article-share-link">分享</a>
+      <a data-url="https://leiquan.website/2017/12/18/Koa Best Practice/" data-id="cjbgt4oe000068gfymdgvgoqq" class="article-share-link">分享</a>
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Koa/">Koa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
 

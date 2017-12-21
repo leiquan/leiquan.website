@@ -10,6 +10,10 @@ tags:
 
 来滴滴出行后的第一个项目，是重构一个Java版本的港台网站发布系统，必须得先吐槽一下：人家Java版本的都没开发完，都开始重构，也真是醉了，真是浪费了生产力，创造了无聊的GDP。
 
+第一次用 KOA，总结了下项目结构和常用包，去掉了公司的所有业务代码，觉得可以用来做个 Starter。
+
+[Github](https://github.com/leiquan/Koa-Best-Practice)
+
 <!--more-->
 
 #### 代码结构：
@@ -109,9 +113,9 @@ module.exports = News;
 
 5.路由处理
 
-这个项目里面既用到了Server端的MVC渲染模式，也使用了前后端分离的提供接口的模式，因而约定了接口数据到放在data里面，直接页面访问就在对应目录下，比如：new/data/add 表示添加新闻的数据接口，new/add则是添加新闻的页面了。
+这个项目里面既用到了Server端的MVC渲染模式，也使用了前后端分离的提供接口的模式，因而约定了接口数据到放在data里面，直接页面访问就在对应目录下，比如：news/data/add 表示添加新闻的数据接口，news/add则是添加新闻的页面了。
 
-因为路由很多，一个个配置很麻烦，所以写了routes.js，定义好URL和控制器的Map，直接玄幻require即可。
+因为路由很多，一个个配置很麻烦，所以写了routes.js，定义好URL和控制器的Map，直接循环require即可。
 
 ```javascript
 let routes = function (router) {
