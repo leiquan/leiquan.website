@@ -147,6 +147,15 @@ body {
   background: #eee;
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  line-height: 1.625;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .outer {
   max-width: 1220px;
