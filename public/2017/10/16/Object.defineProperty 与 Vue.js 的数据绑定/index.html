@@ -15,7 +15,7 @@
 <meta property="og:description" content="Vue.js 是如何实现数据的双向绑定的？这是面试中经常问到的一个问题。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://leiquan.website/2017/10/16/Object.defineProperty%20与%20Vue.js%20的数据绑定/1.png">
-<meta property="og:updated_time" content="2017-10-16T03:18:09.787Z">
+<meta property="og:updated_time" content="2017-11-07T15:59:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Object.defineProperty 与 Vue.js 的数据绑定">
 <meta name="twitter:description" content="Vue.js 是如何实现数据的双向绑定的？这是面试中经常问到的一个问题。">
@@ -100,8 +100,8 @@
         <p>Vue.js 是如何实现数据的双向绑定的？这是面试中经常问到的一个问题。</p>
 <p><img src="/2017/10/16/Object.defineProperty 与 Vue.js 的数据绑定/1.png" alt="Vue.js 的官网示意图"></p>
 <a id="more"></a>
-<p>官网文档是有<a href="https://cn.vuejs.org/v2/guide/reactivity.html" target="_blank" rel="noopener">详细解释</a>的，但是还是有些不够，我也明白的不够深，来捋一下吧。</p>
-<p>首先，是用到了 ES5 的<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener">defineProperty</a>这一特性的，看一下其作用和参数。</p>
+<p>官网文档是有<a href="https://cn.vuejs.org/v2/guide/reactivity.html" target="_blank" rel="external">详细解释</a>的，但是还是有些不够，我也明白的不够深，来捋一下吧。</p>
+<p>首先，是用到了 ES5 的<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="external">defineProperty</a>这一特性的，看一下其作用和参数。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* @param  obj The object on which to define the property.</span></span><br><span class="line"><span class="comment">* @param prop The name of the property to be defined or modified.</span></span><br><span class="line"><span class="comment">* @param descriptor The descriptor for the property being defined or modified.</span></span><br><span class="line"><span class="comment">* @return  The object that was passed to the function.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</span><br></pre></td></tr></table></figure>
 <p>前两个参数就比较简单了，第三个则比较复杂一些，有 value 代表属性的值，proto代表继承属性的性质，这里面还有其他的选项：比如configurable,enumerable,writable等默认是false的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MDN 例子和注释改了改</span></span><br><span class="line"><span class="comment">// 现在大家都喜欢吸猫？我清楚的记得 shadowsocks 开源管理项目 ss-panel 的作者把主要的变量以🐱命名...</span></span><br><span class="line"><span class="comment">// using __proto__</span></span><br><span class="line"><span class="keyword">var</span> cat = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> descriptor = <span class="built_in">Object</span>.create(<span class="literal">null</span>); <span class="comment">// no inherited properties</span></span><br><span class="line"><span class="comment">// not enumerable, not configurable, not writable as defaults</span></span><br><span class="line">descriptor.value = <span class="string">'Xu Jiufeng'</span>; <span class="comment">// 我朋友的一只猫叫做徐九凤，是个姑娘</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(cat, <span class="string">'name'</span>, descriptor);</span><br></pre></td></tr></table></figure>
@@ -119,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leiquan.website/2017/10/16/Object.defineProperty 与 Vue.js 的数据绑定/" data-id="cjc26au0s000k4zfyoz8fvvts" class="article-share-link">分享</a>
+      <a data-url="https://leiquan.website/2017/10/16/Object.defineProperty 与 Vue.js 的数据绑定/" data-id="cjc9g5eig000kro21i7uesooo" class="article-share-link">分享</a>
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
 

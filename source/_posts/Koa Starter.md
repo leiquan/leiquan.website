@@ -1,5 +1,5 @@
 ---
-title: Koa Best Practice
+title: Koa Starter
 date: 2017-12-18 23:42:04
 category: 服务器
 tags:
@@ -12,7 +12,7 @@ tags:
 
 第一次用 KOA，总结了下项目结构和常用包，去掉了公司的所有业务代码，觉得可以用来做个 Starter。
 
-[Github](https://github.com/leiquan/Koa-Best-Practice)
+[Github](https://github.com/leiquan/Koa-Starter)
 
 <!--more-->
 
