@@ -95,19 +95,20 @@ class Store {
   // 被观察者
   @observable 
   todos = [{
-    title: "完成 Mobx 翻译",
+    title: "任务0， 已完成",
     done: true,
   },
   {
-    title: "未完成 Mobx 翻译",
+    title: "任务1， 未完成",
     done: false,
   }
 ];
 
   // 行为
   @action 
-  changeTodoTitle({index,title}){
-    this.todos[index].title = title
+  changeTodo({index,title, done}){
+    this.todos[index].title = title;
+    this.todos[index].done = done;
   }
 
   // 衍生值
@@ -126,7 +127,7 @@ class TodoBox extends React.Component  {
     super(props);
     setTimeout(function(){
       // 通过 action 来操作store，避免直接操作 store
-      props.store.changeTodoTitle({index:0,title:"修改后的todo标题"});
+      props.store.changeTodo({index:1,title:"修改后的任务1", done: true});
     }, 3000);
   }
 
@@ -152,8 +153,8 @@ class TodoBox2 extends React.Component  {
     super(props);
     setTimeout(function(){
       // 通过 action 来操作store，避免直接操作 store
-      props.store.changeTodoTitle({index:0,title:"修改后的todo标题"});
-    }, 3000);
+      props.store.changeTodo({index:0,title:"修改后的任务0", done: false});
+    }, 6000);
   }
 
   render() {
