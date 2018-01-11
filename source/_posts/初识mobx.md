@@ -1,5 +1,5 @@
 ---
-title: 初识mbox
+title: 初识mobx
 date: 2018-01-11 22:43:04
 category: 前端
 tags:
