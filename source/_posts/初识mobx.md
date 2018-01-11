@@ -127,7 +127,7 @@ class TodoBox extends React.Component  {
     super(props);
     setTimeout(function(){
       // 通过 action 来操作store，避免直接操作 store
-      props.store.changeTodo({index:1,title:"修改后的任务1", done: true});
+      props.store.changeTodo({index:1,title:"修改后的任务1，已完成", done: true});
     }, 3000);
   }
 
@@ -153,7 +153,7 @@ class TodoBox2 extends React.Component  {
     super(props);
     setTimeout(function(){
       // 通过 action 来操作store，避免直接操作 store
-      props.store.changeTodo({index:0,title:"修改后的任务0", done: false});
+      props.store.changeTodo({index:0,title:"修改后的任务0，未完成", done: false});
     }, 6000);
   }
 
