@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>雷全的个人网站</title>
+  <title>Redis快速入门 | 雷全的个人网站</title>
   <meta name="keywords" content="雷全,雷全的个人网站,雷全的个人主页,雷全的博客,leiquan,leiquan.me,leiquan.website">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="欢迎访问雷全的个人网站，这里有我的技术博客、打油小诗、随笔杂文、读书笔记以及我分享的照片和资源。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="雷全的个人网站">
-<meta property="og:url" content="https://leiquan.website/page/8/index.html">
+  <meta name="description" content="作为一名程序员，当然是听说过 Redis 多年了，但是一直没有好好的学习他一下。我想，作为一个有几年经验的开发人员，并且熟悉 MySql，应该很快就能入门，因此今晚准备花50分钟来入门它——50分钟后就是凌晨两点，该睡觉了，不想背单词，就学技术吧。 技术这种东西，入门一个，头脑里就少一个黑洞…先入门，再择需深入，是我的学习路径。">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis快速入门">
+<meta property="og:url" content="https://leiquan.website/2018/01/16/Redis快速入门/index.html">
 <meta property="og:site_name" content="雷全的个人网站">
-<meta property="og:description" content="欢迎访问雷全的个人网站，这里有我的技术博客、打油小诗、随笔杂文、读书笔记以及我分享的照片和资源。">
+<meta property="og:description" content="作为一名程序员，当然是听说过 Redis 多年了，但是一直没有好好的学习他一下。我想，作为一个有几年经验的开发人员，并且熟悉 MySql，应该很快就能入门，因此今晚准备花50分钟来入门它——50分钟后就是凌晨两点，该睡觉了，不想背单词，就学技术吧。 技术这种东西，入门一个，头脑里就少一个黑洞…先入门，再择需深入，是我的学习路径。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-17T18:27:53.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雷全的个人网站">
-<meta name="twitter:description" content="欢迎访问雷全的个人网站，这里有我的技术博客、打油小诗、随笔杂文、读书笔记以及我分享的照片和资源。">
+<meta name="twitter:title" content="Redis快速入门">
+<meta name="twitter:description" content="作为一名程序员，当然是听说过 Redis 多年了，但是一直没有好好的学习他一下。我想，作为一个有几年经验的开发人员，并且熟悉 MySql，应该很快就能入门，因此今晚准备花50分钟来入门它——50分钟后就是凌晨两点，该睡觉了，不想背单词，就学技术吧。 技术这种东西，入门一个，头脑里就少一个黑洞…先入门，再择需深入，是我的学习路径。">
   
   
     <link rel="icon" href="/css/images/me.jpg">
@@ -66,12 +68,10 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Ubuntu14-04完美服务器配置" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Redis快速入门" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/08/Ubuntu14-04完美服务器配置/" class="article-date">
-  <time datetime="2017-01-08T07:49:44.000Z" itemprop="datePublished">2017-01-08</time>
+    <a href="/2018/01/16/Redis快速入门/" class="article-date">
+  <time datetime="2018-01-15T16:46:00.000Z" itemprop="datePublished">2018-01-16</time>
 </a>
 
     
@@ -86,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/08/Ubuntu14-04完美服务器配置/">Ubuntu14.04完美服务器配置</a>
+    <h1 class="article-title" itemprop="name">
+      Redis快速入门
     </h1>
   
 
@@ -95,379 +95,98 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我使用 Vultr 的机器，他家的机器性价比高，宽带速度大，SSD 硬盘性能好，非常不错，我的三台机器都在 Vultr 上。</p>
-<p>这是我的<a href="http://www.vultr.com/?ref=6857391" target="_blank" rel="noopener">推荐链接</a>。</p>
-<p>这是我的<a href="http://www.vultr.com/?ref=6916704-3B" target="_blank" rel="noopener">专属活动链接</a>，从这里注册你能得到20美元的优惠。</p>
-<p>现在分享一下我的基于Ubuntu14.04的完美服务器方案，此方案是我的所有服务器的标准配置，非常好用，屡试不爽。为了安全，密码全部替换成了123456.如果你参考这里配置自己的服务器，请注意修改。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/08/Ubuntu14-04完美服务器配置/">阅读全文</a>
-          </p>
-        
+        <p>作为一名程序员，当然是听说过 Redis 多年了，但是一直没有好好的学习他一下。我想，作为一个有几年经验的开发人员，并且熟悉 MySql，应该很快就能入门，因此今晚准备花50分钟来入门它——50分钟后就是凌晨两点，该睡觉了，不想背单词，就学技术吧。</p>
+<p>技术这种东西，入门一个，头脑里就少一个黑洞…先入门，再择需深入，是我的学习路径。</p>
+<a id="more"></a>
+<h4 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install redis-server</span><br></pre></td></tr></table></figure>
+<h4 id="二、启动-Redis"><a href="#二、启动-Redis" class="headerlink" title="二、启动 Redis"></a>二、启动 Redis</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server</span><br></pre></td></tr></table></figure>
+<p>启动的过程中，发现报了个警告：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.</span><br></pre></td></tr></table></figure></p>
+<p>再次启动，便没有问题了，为了后台运行，加 nohup 和 &amp;，端口为6379。</p>
+<h4 id="三、数据类型"><a href="#三、数据类型" class="headerlink" title="三、数据类型"></a>三、数据类型</h4><ol>
+<li><p>String（字符串）</p>
+<p> string是redis最基本的类型，你可以理解成与Memcached一模一样的类型，一个key对应一个value。</p>
+<p> string类型是二进制安全的。意思是redis的string可以包含任何数据。比如jpg图片或者序列化的对象 。</p>
+<p> string类型是Redis最基本的数据类型，一个键最大能存储512MB。</p>
+</li>
+<li><p>Hash（哈希）</p>
+<p> Redis hash 是一个键值(key=&gt;value)对集合。</p>
+<p> Redis hash是一个string类型的field和value的映射表，hash特别适合用于存储对象。</p>
+<p> 每个 hash 可以存储 232 -1 键值对（40多亿）</p>
+</li>
+<li><p>List（列表）</p>
+<p> Redis 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）。</p>
+<p> 列表最多可存储 232 - 1 元素 (4294967295, 每个列表可存储40多亿)。</p>
+</li>
+<li><p>Set（集合）</p>
+<p> Redis的Set是string类型的无序集合。</p>
+<p> 集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)。</p>
+</li>
+<li><p>zset(sorted set：有序集合)<br> Redis zset 和 set 一样也是string类型元素的集合,且不允许重复的成员。</p>
+<p> 不同的是每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。</p>
+<p> zset的成员是唯一的,但分数(score)却可以重复。</p>
+</li>
+</ol>
+<h4 id="四、发布订阅"><a href="#四、发布订阅" class="headerlink" title="四、发布订阅"></a>四、发布订阅</h4><p>发布订阅模式作为程序员很熟悉，只是好奇在数据库里竟然实现了这个，以前并不知道。看一下.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br><span class="line"></span><br><span class="line">SUBSCRIBE redisChat</span><br></pre></td></tr></table></figure>
+<p>新开一个终端连接 Redis，发布订阅：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br><span class="line"></span><br><span class="line">PUBLISH redisChat "Hello, world!"</span><br></pre></td></tr></table></figure>
+<p>之前的一个终端便受到了消息。</p>
+<p>如果用 Node.JS 的话，则可以用 ioredis 来实现方便的操作。甚至实现简单的聊天室，涨姿势了，之前一直认为聊天室需要 Socket 编程的，参考资料2和3。真·特色功能。这一块儿需要写个 demo 感受一下。</p>
+<h4 id="五、事务"><a href="#五、事务" class="headerlink" title="五、事务"></a>五、事务</h4><p>事务基本概念就没有什么好说的了，保证原子性的批量操作，但是也有不少东西需要学习。参考资料4.</p>
+<h4 id="六、消息队列"><a href="#六、消息队列" class="headerlink" title="六、消息队列"></a>六、消息队列</h4><p>因为 Redis 在内存里，所以非常的快。因此 Redis 用来缓存任务是非常的好。参考资料5，一个简单的模型。但是这个模型的问题是仅仅适用于不需要返回值的模型。</p>
+<p>我搜了下，搜到了参考资料6，答者的分析很好。</p>
+<pre><code>&quot;最后再来看题主的需求，是希望先写Redis，再异步同步到mysql里面，期望数据的最终一致性。这样带来的好处是前端写的请求飞速啊(不用落盘当然快)，问题是很复杂，而且不太合理。假设是合理的话，就应该选择一个更可靠的消息中间件，比如Redis作者开源的Disque，或者阿里开源RocketMQ，以及基于Golang的nsq等，Redis更适合用来存数据。&quot;
+</code></pre><p>所以我来看一下Disque以及同事提到的卡夫卡。完了，已经超时10分钟了，看来是要下次接着学的节奏。</p>
+<p>一小时快速入门到此为止。睡觉。</p>
+<hr>
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><p>1.<a href="http://blog.csdn.net/guoduhua/article/details/55102403" target="_blank" rel="noopener">Redis系列(三)：Redis发布订阅及客户端编程——CSDN</a></p>
+<p>2.<a href="https://www.npmjs.com/package/ioredis" target="_blank" rel="noopener">ioredis——npm.js</a></p>
+<p>3.<a href="http://blog.csdn.net/zfy1355/article/details/50963964" target="_blank" rel="noopener">基于订阅/发布模式的简易聊天室实现（java+redis）</a></p>
+<p>4.<a href="http://www.runoob.com/redis/redis-transactions.html" target="_blank" rel="noopener">Redis 事务</a></p>
+<p>5.<a href="https://segmentfault.com/a/1190000004136250" target="_blank" rel="noopener">【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合</a></p>
+<p>6.<a href="https://www.zhihu.com/question/20795043" target="_blank" rel="noopener">redis怎么做消息队列?</a></p>
+<p>7.<a href="https://www.zhihu.com/question/43557507?sort=created" target="_blank" rel="noopener">Kafka，Mq，Redis作为消息队列使用时的差异</a></p>
+<p>8.<a href="https://www.cnblogs.com/likehua/p/3999538.html" target="_blank" rel="noopener">kafka入门：简介、使用场景、设计原理、主要配置及集群搭建（转）</a></p>
+<p>9.<a href="https://www.cnblogs.com/fanwencong/p/5782860.html" target="_blank" rel="noopener">总结：如何使用redis缓存加索引处理数据库百万级并发</a></p>
+<p>10.<a href="http://blog.csdn.net/shendl/article/details/51092916" target="_blank" rel="noopener">用Redis轻松实现秒杀系统</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://leiquan.website/2017/01/08/Ubuntu14-04完美服务器配置/" data-id="cjcjeh7sa000r83zqe372588o" class="article-share-link">分享</a>
+      <a data-url="https://leiquan.website/2018/01/16/Redis快速入门/" data-id="cjcjeh7s6000m83zq0ugwx17h" class="article-share-link">分享</a>
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LAMP/">LAMP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu14/">Ubuntu14</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器设置/">服务器设置</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-为网站设置HTTPS" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/01/为网站设置HTTPS/" class="article-date">
-  <time datetime="2017-01-01T04:39:04.000Z" itemprop="datePublished">2017-01-01</time>
-</a>
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/服务器/">服务器</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/01/为网站设置HTTPS/">为网站设置HTTPS</a>
-    </h1>
+    <a href="/2018/01/16/海边漫步/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">海边漫步</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们知道，现在几乎所有的大型网站，比如谷歌，百度等，都已经启用了全栈 HTTPS，用了 HTTPS 之后，不仅访问的时候安全性有保障，而且地址栏绿色的“安全“提示也很酷炫很让人放心。所以，咱们作为个人站长，当然也要跟上时代潮流啊。然而很不幸，HTTPS  的SSL证书通常是要钱的，并且价格不菲，因为毕竟别人给你干活发证书了嘛。</p>
-<p>然而互联网总是很神奇，很多优秀，很有价值的东西，通常能够免费获得。Let’s encrypt 就是今天的主角。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/01/为网站设置HTTPS/">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://leiquan.website/2017/01/01/为网站设置HTTPS/" data-id="cjcjeh7tw001k83zqu4fylvgj" class="article-share-link">分享</a>
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器设置/">服务器设置</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络安全/">网络安全</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
 
-
-  
-    <article id="post-关于本站" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/30/关于本站/" class="article-date">
-  <time datetime="2016-12-30T04:00:00.000Z" itemprop="datePublished">2016-12-30</time>
-</a>
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/About/">About</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/30/关于本站/">About Leiquan.website</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>欢迎来到雷全的个人网站！</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/12/30/关于本站/">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://leiquan.website/2016/12/30/关于本站/" data-id="cjcjeh7ut002h83zqikmebt5w" class="article-share-link">分享</a>
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/about-leiquan-website/">about leiquan.website</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/关于本站/">关于本站</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-关于本人" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/30/关于本人/" class="article-date">
-  <time datetime="2016-12-30T04:00:00.000Z" itemprop="datePublished">2016-12-30</time>
-</a>
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/About/">About</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/30/关于本人/">About Leiquan</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>欢迎来到雷全的个人网站！</p>
-<p>我叫雷全。雷锋的雷，全心全意为人民服务的全，姓名的含义就是向雷锋同志学习，全心全意为人民服务。我爸妈希望我长大后，能有所作为，服务于人民。</p>
-<p>我经常问自己，我是一个什么样的人？貌似从来没有得出一个准确且易描述的答案。</p>
-<p>因为我不想让自己成为这种人、或者那种人，我不想局限自己在某一个特定的形象或者角色上。我觉得人生很短又很长，很多东西都可以去尝试、学习和经历，一个人的性格特质、兴趣爱好都是会改变和发展的，明天的我可能就与今天的我不一样了——当然了，一个人的本质是不会随便改变的。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/12/30/关于本人/">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://leiquan.website/2016/12/30/关于本人/" data-id="cjcjeh7us002d83zqlf60dz0x" class="article-share-link">分享</a>
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/about-me/">about me</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/关于本人/">关于本人</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-文艺的南洋小镇-马六甲" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/04/文艺的南洋小镇-马六甲/" class="article-date">
-  <time datetime="2016-10-04T04:00:00.000Z" itemprop="datePublished">2016-10-04</time>
-</a>
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/旅行与户外/">旅行与户外</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/04/文艺的南洋小镇-马六甲/">文艺的南洋小镇-马六甲</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>小时候，我便知道马六甲海峡；长大后，才能有机会来这里看看。</p>
-<p>我们一伙8个人在普吉岛骑完了大象，就各自组队分别：一队去清迈，一队去马来西亚，我和南瓜是去马来西亚的。在吉隆坡国际机场，我和南瓜分别，他先在吉隆坡逛逛，而我坐大巴去马六甲和我的同事桃子会和，我们此行每个人都有个绰号，我叫茄子，因为我喜欢吃茄子。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/10/04/文艺的南洋小镇-马六甲/">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://leiquan.website/2016/10/04/文艺的南洋小镇-马六甲/" data-id="cjcjeh7w2004k83zqbwlscrx0" class="article-share-link">分享</a>
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/马六甲/">马六甲</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/马来西亚/">马来西亚</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-雨中的海岛--普吉" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/02/雨中的海岛--普吉/" class="article-date">
-  <time datetime="2016-10-02T04:00:00.000Z" itemprop="datePublished">2016-10-02</time>
-</a>
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/旅行与户外/">旅行与户外</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/02/雨中的海岛--普吉/">雨中的海岛--普吉</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本来我们计划来普吉岛，面朝大海，春暖花开的；顺便跳个伞的；结果，还没下飞机就开始下雨，连续的下雨；然后我们无聊，在酒店 K 歌。</p>
-<p><img src="/2016/10/02/雨中的海岛--普吉/1.jpg" alt="我们定的酒店，就是为了一睁眼就看到海"></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/10/02/雨中的海岛--普吉/">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://leiquan.website/2016/10/02/雨中的海岛--普吉/" data-id="cjcjeh7x1006g83zq5qzuzh9o" class="article-share-link">分享</a>
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/普吉岛/">普吉岛</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/泰国/">泰国</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-万佛之城--曼谷" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/01/万佛之城--曼谷/" class="article-date">
-  <time datetime="2016-10-01T04:00:00.000Z" itemprop="datePublished">2016-10-01</time>
-</a>
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/旅行与户外/">旅行与户外</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/01/万佛之城--曼谷/">万佛之城--曼谷</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们是一行九个人在曼谷集合的，都是同事和朋友。</p>
-<p><img src="/2016/10/01/万佛之城--曼谷/1.jpg" alt="每一个，都是帅哥美女对不对?"></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/10/01/万佛之城--曼谷/">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://leiquan.website/2016/10/01/万佛之城--曼谷/" data-id="cjcjeh7t2001583zqpgq4cw6u" class="article-share-link">分享</a>
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/曼谷/">曼谷</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/泰国/">泰国</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-火热的海滨--芭提雅" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/29/火热的海滨--芭提雅/" class="article-date">
-  <time datetime="2016-09-29T04:00:00.000Z" itemprop="datePublished">2016-09-29</time>
-</a>
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/旅行与户外/">旅行与户外</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/29/火热的海滨--芭提雅/">火热的海滨--芭提雅</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>芭提雅，还是个很 hot 的地方。我们是一行四个人去的。</p>
-<p><img src="/2016/09/29/火热的海滨--芭提雅/1.jpg" alt="海边酒店楼顶的泳池"></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/29/火热的海滨--芭提雅/">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://leiquan.website/2016/09/29/火热的海滨--芭提雅/" data-id="cjcjeh7wk005g83zqbpr33whu" class="article-share-link">分享</a>
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/人妖/">人妖</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/泰国/">泰国</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/芭提雅/">芭提雅</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/7/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/">下一页</a>
-  </nav>
+  <section id="comments">
+    <!--PC和WAP自适应版-->
+    <div id="SOHUCS" ></div>
+    <script type="text/javascript">
+    (function(){
+    var appid = 'cysUH4jp6';
+    var conf = 'dbbe8c0b992cfeb371ccd7ecd937e4ae';
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+    </script>
+  </section>
 
 </section>
         
