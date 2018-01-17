@@ -133,6 +133,8 @@ PUBLISH redisChat "Hello, world!"
 
 10.[用Redis轻松实现秒杀系统](http://blog.csdn.net/shendl/article/details/51092916)
 
+11.[Redis 可以用来做数据库吗？](https://www.zhihu.com/question/19660689)
+
 
 
 
