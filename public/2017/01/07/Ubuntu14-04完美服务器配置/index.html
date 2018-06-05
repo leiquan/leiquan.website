@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ubuntu14.04完美服务器配置 | 雷全的个人网站</title>
+  <meta name="keywords" content="雷全,雷全的个人网站,雷全的个人主页,雷全的博客,leiquan,leiquan.me,leiquan.website">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我使用 Vultr 的机器，他家的机器性价比高，宽带速度大，SSD 硬盘性能好，非常不错，我的三台机器都在 Vultr 上。 这是我的推荐链接。 这是我的专属活动链接，从这里注册你能得到20美元的优惠。 现在分享一下我的基于Ubuntu14.04的完美服务器方案，此方案是我的所有服务器的标准配置，非常好用，屡试不爽。为了安全，密码全部替换成了123456.如果你参考这里配置自己的服务器，请注意修改">
+<meta name="keywords" content="Ubuntu14,服务器设置,LAMP,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu14.04完美服务器配置">
+<meta property="og:url" content="https://leiquan.website/2017/01/07/Ubuntu14-04完美服务器配置/index.html">
+<meta property="og:site_name" content="雷全的个人网站">
+<meta property="og:description" content="我使用 Vultr 的机器，他家的机器性价比高，宽带速度大，SSD 硬盘性能好，非常不错，我的三台机器都在 Vultr 上。 这是我的推荐链接。 这是我的专属活动链接，从这里注册你能得到20美元的优惠。 现在分享一下我的基于Ubuntu14.04的完美服务器方案，此方案是我的所有服务器的标准配置，非常好用，屡试不爽。为了安全，密码全部替换成了123456.如果你参考这里配置自己的服务器，请注意修改">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-24T18:38:33.961Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu14.04完美服务器配置">
+<meta name="twitter:description" content="我使用 Vultr 的机器，他家的机器性价比高，宽带速度大，SSD 硬盘性能好，非常不错，我的三台机器都在 Vultr 上。 这是我的推荐链接。 这是我的专属活动链接，从这里注册你能得到20美元的优惠。 现在分享一下我的基于Ubuntu14.04的完美服务器方案，此方案是我的所有服务器的标准配置，非常好用，屡试不爽。为了安全，密码全部替换成了123456.如果你参考这里配置自己的服务器，请注意修改">
+  
+  
+    <link rel="icon" href="/css/images/me.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">雷全的个人网站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to Lei Quan&#39;s Website</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="https://www.zhihu.com/people/hi.leiquan/">Zhihu</a>
+        
+          <a class="main-nav-link" href="https://github.com/leiquan">Github</a>
+        
+          <a class="main-nav-link" href="https://www.linkedin.com/in/leiquan/">LinkedIn</a>
+        
+          <a class="main-nav-link" href="https://www.facebook.com/hi.leiquan">Facebook</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <!--  -->
+        <!-- <a id="nav-search-btn" class="nav-icon" title="搜索"></a> -->
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://leiquan.website"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Ubuntu14-04完美服务器配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/07/Ubuntu14-04完美服务器配置/" class="article-date">
+  <time datetime="2017-01-08T07:49:44.000Z" itemprop="datePublished">2017-01-08</time>
+</a>
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/服务器/">服务器</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu14.04完美服务器配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我使用 Vultr 的机器，他家的机器性价比高，宽带速度大，SSD 硬盘性能好，非常不错，我的三台机器都在 Vultr 上。</p>
+<p>这是我的<a href="http://www.vultr.com/?ref=6857391" target="_blank" rel="noopener">推荐链接</a>。</p>
+<p>这是我的<a href="http://www.vultr.com/?ref=6916704-3B" target="_blank" rel="noopener">专属活动链接</a>，从这里注册你能得到20美元的优惠。</p>
+<p>现在分享一下我的基于Ubuntu14.04的完美服务器方案，此方案是我的所有服务器的标准配置，非常好用，屡试不爽。为了安全，密码全部替换成了123456.如果你参考这里配置自己的服务器，请注意修改。</p>
+<a id="more"></a>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>(1)配置好后，不重启，不关机<br>(2)重要文件修改前一定要备份</p>
+<h3 id="概要："><a href="#概要：" class="headerlink" title="概要："></a>概要：</h3><p>(1)机器系统版本：Ubuntu 14.04 x64<br>(2)机器主要服务：Shadowsocks，HTTP,  PHP，MySQL，Node JS，Tomcat, Java, Git，SVN，Email，PhantomJS，Go，MongoDB，C/C++，redis</p>
+<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><p>(1)额外软件安装目录：/opt<br>(2)web 目录：/var/www</p>
+<h3 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h3><p>(1)启动 Shadowsocks:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
+<p>(2)停止Shadowsocks：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure>
+<p>(3)重新启动 apache：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
+<p>(4)启动 tomcat：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/apache-tomcat-8.0.38/bin/startup.sh</span><br></pre></td></tr></table></figure>
+<p>(5)停止 tomcat:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/apache-tomcat-8.0.38/bin/shutdown.sh</span><br></pre></td></tr></table></figure>
+<p>(6)查看 shadow socks的流量统计：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -vnL</span><br></pre></td></tr></table></figure>
+<h3 id="服务器配置："><a href="#服务器配置：" class="headerlink" title="服务器配置："></a>服务器配置：</h3><h4 id="1-用初始密码登录"><a href="#1-用初始密码登录" class="headerlink" title="1.用初始密码登录"></a>1.用初始密码登录</h4><h4 id="2-更改密码"><a href="#2-更改密码" class="headerlink" title="2.更改密码:"></a>2.更改密码:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd root</span><br></pre></td></tr></table></figure>
+<p>更改为 123456</p>
+<h4 id="3-更新："><a href="#3-更新：" class="headerlink" title="3.更新："></a>3.更新：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+<h4 id="4-安装-vim"><a href="#4-安装-vim" class="headerlink" title="4.安装 vim:"></a>4.安装 vim:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install vim</span><br></pre></td></tr></table></figure>
+<h4 id="5-修改-locale"><a href="#5-修改-locale" class="headerlink" title="5.修改 locale:"></a>5.修改 locale:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/default/locale</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LANG=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LANGUAGE=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_ALL=<span class="string">"en_US.UTF-8"</span></span><br></pre></td></tr></table></figure>
+<p>(2)先 logout ，再 login，这时候前面设置的 locale 才能生效</p>
+<h4 id="6-安装-unzip"><a href="#6-安装-unzip" class="headerlink" title="6.安装 unzip:"></a>6.安装 unzip:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install unzip</span><br></pre></td></tr></table></figure>
+<h4 id="7-安装-git"><a href="#7-安装-git" class="headerlink" title="7.安装 git:"></a>7.安装 git:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install git</span><br></pre></td></tr></table></figure>
+<h4 id="8-安装-svn"><a href="#8-安装-svn" class="headerlink" title="8.安装 svn:"></a>8.安装 svn:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install subversion</span><br></pre></td></tr></table></figure>
+<h4 id="8-安装-shadow-socks"><a href="#8-安装-shadow-socks" class="headerlink" title="8.安装 shadow socks:"></a>8.安装 shadow socks:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-gevent python-pip</span><br><span class="line">pip install shadowsocks</span><br><span class="line">apt-get install python-m2crypto</span><br></pre></td></tr></table></figure>
+<p>新建配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
+<p>启动服务器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
+<h4 id="9-一次性添加流量统计监控端口"><a href="#9-一次性添加流量统计监控端口" class="headerlink" title="9.一次性添加流量统计监控端口:"></a>9.一次性添加流量统计监控端口:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim listen.sh</span><br></pre></td></tr></table></figure>
+<p>新建文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!bin/bash</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $( seq 2000 2100 )</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    iptables -A OUTPUT -p tcp --sport <span class="variable">$i</span> &amp;&amp; iptables -A INPUT -p tcp --dport <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>执行这个脚本，添加监控：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash listen.sh</span><br></pre></td></tr></table></figure>
+<p>执行查看流量统计：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -vnL</span><br></pre></td></tr></table></figure>
+<h4 id="10-安装-lamp"><a href="#10-安装-lamp" class="headerlink" title="10.安装 lamp:"></a>10.安装 lamp:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">apt-get install apache2</span><br><span class="line">apt-get install php5</span><br><span class="line">apt-get install php5-cli</span><br><span class="line">apt-get install php5-gd   </span><br><span class="line">apt-get install mysql-server   密码 930102@my</span><br><span class="line">apt-get install mysql-client</span><br><span class="line">apt-get install php5-mysql</span><br></pre></td></tr></table></figure>
+<p>提示：gd 为图形库，二维码绘制需要</p>
+<h4 id="11-设置-apache"><a href="#11-设置-apache" class="headerlink" title="11.设置 apache:"></a>11.设置 apache:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure>
+<p>增加全局配置，添加如下行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServerName localhost</span><br></pre></td></tr></table></figure>
+<p>编辑虚拟机配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/apache2/sites-available/000-default.conf</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">       ServerAdmin postmaster@leiquan.me</span><br><span class="line">       DocumentRoot /var/www</span><br><span class="line">       ErrorLog <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/error.log</span><br><span class="line">       CustomLog <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/access.log combined</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">       ServerName leiquan.me</span><br><span class="line">       ServerAlias *.leiquan.me</span><br><span class="line">       ServerAdmin postmaster@leiquan.me</span><br><span class="line">       DocumentRoot /var/www/leiquan.me</span><br><span class="line">       ErrorLog <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/leiquan.me/error.log</span><br><span class="line">       CustomLog <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/leiquan.me/access.log combined</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>创建日志目录,每个站的日志分开存放：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/<span class="built_in">log</span>/apache2/leiquan.me/</span><br></pre></td></tr></table></figure>
+<h4 id="12-安装-phpmyadmin到-var-www"><a href="#12-安装-phpmyadmin到-var-www" class="headerlink" title="12.安装 phpmyadmin到/var/www:"></a>12.安装 phpmyadmin到/var/www:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://files.phpmyadmin.net/phpMyAdmin/4.6.4/phpMyAdmin-4.6.4-all-languages.zip</span><br><span class="line">unzip phpMyAdmin-4.6.4-all-languages.zip</span><br></pre></td></tr></table></figure>
+<h4 id="13-克隆各个代码库，然后重启-apache："><a href="#13-克隆各个代码库，然后重启-apache：" class="headerlink" title="13.克隆各个代码库，然后重启 apache："></a>13.克隆各个代码库，然后重启 apache：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
+<h4 id="14-安装-node"><a href="#14-安装-node" class="headerlink" title="14.安装 node:"></a>14.安装 node:</h4><p>(1)下载 node 的 linux 二进制文件到/opt：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v6.8.0/node-v6.8.0-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v6.8.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+<p>(2) 编辑环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>末尾加上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Node JS</span></span><br><span class="line"><span class="built_in">export</span> NODE_HOME=/opt/node-v6.8.0-linux-x64</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$NODE_HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> NODE_PATH=<span class="variable">$NODE_HOME</span>/lib/node_modules</span><br></pre></td></tr></table></figure>
+<p>(4)使之生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<p>(5)检测生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<h4 id="15-接下来安装-JDK-设置环境变量："><a href="#15-接下来安装-JDK-设置环境变量：" class="headerlink" title="15.接下来安装 JDK 设置环境变量："></a>15.接下来安装 JDK 设置环境变量：</h4><p>(1)从JDK官网下载linux64.tar.gz,注意其下载地址是要每次去官网上获得的，并且注意改名改后缀</p>
+<p>或者从本地上传到/opt</p>
+<p>(2)解压移动到/opt：tar -zxvf</p>
+<p>(3)接着添加环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>(4)结尾添加如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Java</span></span><br><span class="line">JAVA_HOME=/opt/jdk1.8.0_112</span><br><span class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/jre/lib/ext:<span class="variable">$JAVA_HOME</span>/lib/tools.jar:/opt/apache-tomcat-8.0.38/lib/servlet-api.jar</span><br><span class="line"><span class="built_in">export</span> PATH JAVA_HOME CLASSSPATH</span><br></pre></td></tr></table></figure>
+<p>(5)使之生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<p>(6)检测生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span></span><br></pre></td></tr></table></figure>
+<h4 id="16-安装-Tomcat8，8-0-38的版本的设置比较简单，8-5-6的设置太复杂了，非本机无法登录管理员，配置如下："><a href="#16-安装-Tomcat8，8-0-38的版本的设置比较简单，8-5-6的设置太复杂了，非本机无法登录管理员，配置如下：" class="headerlink" title="16.安装 Tomcat8，8.0.38的版本的设置比较简单，8.5.6的设置太复杂了，非本机无法登录管理员，配置如下："></a>16.安装 Tomcat8，8.0.38的版本的设置比较简单，8.5.6的设置太复杂了，非本机无法登录管理员，配置如下：</h4><p>(1)官网下载安装文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirrors.cnnic.cn/apache/tomcat/tomcat-8/v8.0.38/bin/apache-tomcat-8.0.38.tar.gz</span><br></pre></td></tr></table></figure>
+<p>(2)解压移动到/opt:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf   apache-tomcat-8.0.38.tar.gz</span><br></pre></td></tr></table></figure>
+<p>(3)编辑管理员：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /opt/apache-tomcat-8.0.38/conf/tomcat-users.xml</span><br></pre></td></tr></table></figure>
+<p>标签内新增：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;role rolename=<span class="string">"manager-gui"</span>/&gt;</span><br><span class="line">&lt;role rolename=<span class="string">"admin-gui"</span>/&gt;</span><br><span class="line">&lt;user username=<span class="string">"root"</span> password=<span class="string">"930102@root"</span> roles=<span class="string">"manager-gui, admin-gui"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p>(4)操作Tomcat服务器，重启实在太慢，请耐心等待：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/opt/apache-tomcat-8.0.38/bin/startup.sh</span><br><span class="line">/opt/apache-tomcat-8.0.38/bin/shutdown.sh</span><br></pre></td></tr></table></figure>
+<p>(5)注意,默认端口为：8080：</p>
+<h4 id="17-安装-PhantomJS："><a href="#17-安装-PhantomJS：" class="headerlink" title="17.安装 PhantomJS："></a>17.安装 PhantomJS：</h4><p>(1)下载到/opt:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2</span><br></pre></td></tr></table></figure>
+<p>或者本地上传<br>(2)解压：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -jxvf phantomjs-2.1.1-linux-x86_64.tar.bz2</span><br></pre></td></tr></table></figure>
+<p>(3)设置环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>写入环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#PhantomJS</span></span><br><span class="line"><span class="built_in">export</span> PATH=/opt/phantomjs-2.1.1-linux-x86_64/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>(4)使环境变量生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<p>(5)添加依赖包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libfontconfig1</span><br><span class="line">phantomjs --version</span><br></pre></td></tr></table></figure>
+<h4 id="18-安装go语言："><a href="#18-安装go语言：" class="headerlink" title="18.安装go语言："></a>18.安装go语言：</h4><p>(1). 下载到/opt:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<p>(2).解压：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf go1.7.3.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<p>(3).配置环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>加入环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Go Lang</span></span><br><span class="line"><span class="built_in">export</span> GOROOT=/opt/go</span><br><span class="line"><span class="built_in">export</span> GOBIN=/opt/go/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOBIN</span></span><br></pre></td></tr></table></figure>
+<p>(4).使之生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<p>(5).验证：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go version</span><br></pre></td></tr></table></figure>
+<h4 id="19-安装-mongoDB"><a href="#19-安装-mongoDB" class="headerlink" title="19.安装 mongoDB:"></a>19.安装 mongoDB:</h4><p>(1)下载到 /opt：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.2.10.tgz</span><br></pre></td></tr></table></figure>
+<p>(2)解压：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mongodb-linux-x86_64-ubuntu1404-3.2.10.tgz</span><br></pre></td></tr></table></figure>
+<p>(3)环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#MongoDB</span></span><br><span class="line"><span class="built_in">export</span> PATH=/opt/mongodb-linux-x86_64-ubuntu1404-3.2.10/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>(5)使环境变量生效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<p>(4)设置数据库目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/db</span><br></pre></td></tr></table></figure>
+<p>(6)启动：(参数是两个短横杠)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod</span><br></pre></td></tr></table></figure>
+<p>如果是启动有web 界面的服务端：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --rest  --httpinterface</span><br></pre></td></tr></table></figure>
+<p>或者加 &amp;保持在后台运行</p>
+<p>MongoDB 的 Web 界面访问端口比服务的端口多1000。<br>如果你的MongoDB运行端口使用默认的27017，你可以在端口号为28017访问web用户界面<br>(7)登录数据库管理数据：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
+<p>(8)退出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quit()</span><br></pre></td></tr></table></figure>
+<h4 id="20-安装c和c-支持："><a href="#20-安装c和c-支持：" class="headerlink" title="20.安装c和c++支持："></a>20.安装c和c++支持：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install build-essential</span><br></pre></td></tr></table></figure>
+<h4 id="21-安装redis："><a href="#21-安装redis：" class="headerlink" title="21.安装redis："></a>21.安装redis：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install redis-server</span><br></pre></td></tr></table></figure>
+<p>验证：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server -v</span><br></pre></td></tr></table></figure>
+<p>(3) 配置文件位置：/etc/redis</p>
+<h4 id="22-邮件服务器：（终于成功了，之前是因为-vultr-屏蔽了25端口）"><a href="#22-邮件服务器：（终于成功了，之前是因为-vultr-屏蔽了25端口）" class="headerlink" title="22.邮件服务器：（终于成功了，之前是因为 vultr 屏蔽了25端口）"></a>22.邮件服务器：（终于成功了，之前是因为 vultr 屏蔽了25端口）</h4><p>首先要做 mx 记录</p>
+<p>MX记录<br>host:@<br>value: leiquan.me<br>priority:1</p>
+<p>安装 postfix：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install postfix</span><br></pre></td></tr></table></figure>
+<p>选择 internet<br>输入 leiquan.me</p>
+<p>安装邮件组件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install mailutils</span><br></pre></td></tr></table></figure>
+<p>(3)添加用户：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd -m -s /bin/bash postmaster</span><br><span class="line">passwd postmaster</span><br></pre></td></tr></table></figure>
+<p>密码为：123456</p>
+<p>(4)编辑转发，这是在本地用户收到了邮件后转发到指定收件箱：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/aliases</span><br></pre></td></tr></table></figure>
+<p>注释掉默认的 postmaster添加：<br>postmaster: leiquan@live.com<br>重新载入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newaliases</span><br></pre></td></tr></table></figure>
+<p>(5)设置主机名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
+<p>添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 leiquan.me</span><br></pre></td></tr></table></figure>
+<p>运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname leiquan.me</span><br></pre></td></tr></table></figure>
+<p>(6)配置 postfix:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/postfix/main.cf</span><br></pre></td></tr></table></figure>
+<p>增加一行设置收件箱风格和地址：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">home_mailbox = Maildir/</span><br></pre></td></tr></table></figure>
+<p>此设定将邮件放在用户的目录的Maildir目录下面</p>
+<p>(7)重启:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/postfix restart</span><br></pre></td></tr></table></figure>
+<p>(8)发送测试邮件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"邮件正文"</span> | mail -s <span class="string">"标题"</span> postmaster</span><br></pre></td></tr></table></figure>
+<p>这时候应该在邮箱就可以收到邮件了，测试均可以正常收到，没有的话查看垃圾箱，并且回复也可以收到，在 Maildir 文件夹内</p>
+<p>常用命令：<br>邮件队列管理：</p>
+<p>#postqueue -p查看邮件队列<br>如果队列序号加了<em>号表示为活动队列<br>如果队列序号加了!号表示为延期队列<br>如果队列序号没有</em>与!号表示为等待队列</p>
+<p>#postsuper -d DBA3F1A9删除队列里的邮件</p>
+<p>#postsuper -d ALL删除队列里所有的邮件</p>
+<p>#postsuper -r ALL重新排队所有邮件</p>
+<p>#postcat -q DBA3F1A9查看邮件内容</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://leiquan.website/2017/01/07/Ubuntu14-04完美服务器配置/" data-id="cji121kd6000ro621fgmu89e9" class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LAMP/">LAMP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu14/">Ubuntu14</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器设置/">服务器设置</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/12/和学姐诗/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          和学姐诗
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/31/为网站设置HTTPS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">为网站设置HTTPS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <!--PC和WAP自适应版-->
+    <div id="SOHUCS" ></div>
+    <script type="text/javascript">
+    (function(){
+    var appid = 'cysUH4jp6';
+    var conf = 'dbbe8c0b992cfeb371ccd7ecd937e4ae';
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+    </script>
+  </section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">十八岁的我</h3>
+      <ul class="widget entry">
+        <a href='https://leiquan.website/'><img class='leiquan-avatar' src='/css/images/me.jpg' style="width: 60%; height: 60%; border-radius: 50%; margin-left:20%;"></a>
+        <li class='link' style="text-align: center; margin-top:5%;">欢迎访问我的个人网站</li>
+      </ul>
+</div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">文章分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About/">About</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/小诗/">小诗</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构与算法/">数据结构与算法</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行与户外/">旅行与户外</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/水彩/">水彩</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活杂录/">生活杂录</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电子与硬件/">电子与硬件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/科技与时事评论/">科技与时事评论</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/航空/">航空</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/行业与案例分析/">行业与案例分析</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记与观后感/">读书笔记与观后感</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔散文/">随笔散文</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">日期归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">2018年06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">2018年04月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">2018年03月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">2018年01月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">2017年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">2017年11月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">2017年10月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">2017年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">2017年08月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">2017年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年06月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017年05月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">2017年04月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">2017年03月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2017年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">2017年01月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">2016年12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">2016年09月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">2015年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">2013年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">2013年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">2012年12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">2012年04月</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云图</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apache/" style="font-size: 10px;">Apache</a> <a href="/tags/BBR加速/" style="font-size: 10px;">BBR加速</a> <a href="/tags/Disqus/" style="font-size: 10px;">Disqus</a> <a href="/tags/Google-Map/" style="font-size: 10px;">Google Map</a> <a href="/tags/HTTPS/" style="font-size: 10px;">HTTPS</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Koa/" style="font-size: 10px;">Koa</a> <a href="/tags/LAMP/" style="font-size: 12px;">LAMP</a> <a href="/tags/LeetCode/" style="font-size: 16px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Macbook/" style="font-size: 10px;">Macbook</a> <a href="/tags/Midnight-in-Paris/" style="font-size: 10px;">Midnight in Paris</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/Ubuntu14/" style="font-size: 10px;">Ubuntu14</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/WePhone/" style="font-size: 10px;">WePhone</a> <a href="/tags/WikiTRIBUNE/" style="font-size: 10px;">WikiTRIBUNE</a> <a href="/tags/about-leiquan-website/" style="font-size: 10px;">about leiquan.website</a> <a href="/tags/about-me/" style="font-size: 10px;">about me</a> <a href="/tags/anaconda/" style="font-size: 10px;">anaconda</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/ip-scaner/" style="font-size: 10px;">ip scaner</a> <a href="/tags/mbox/" style="font-size: 10px;">mbox</a> <a href="/tags/π/" style="font-size: 10px;">π</a> <a href="/tags/上虞/" style="font-size: 10px;">上虞</a> <a href="/tags/世纪佳缘/" style="font-size: 10px;">世纪佳缘</a> <a href="/tags/中医/" style="font-size: 10px;">中医</a> <a href="/tags/云冈石窟/" style="font-size: 10px;">云冈石窟</a> <a href="/tags/五言/" style="font-size: 10px;">五言</a> <a href="/tags/人妖/" style="font-size: 10px;">人妖</a> <a href="/tags/人工智能/" style="font-size: 10px;">人工智能</a> <a href="/tags/人生思考/" style="font-size: 10px;">人生思考</a> <a href="/tags/传感器/" style="font-size: 10px;">传感器</a> <a href="/tags/传销/" style="font-size: 10px;">传销</a> <a href="/tags/兰亭/" style="font-size: 10px;">兰亭</a> <a href="/tags/关于本人/" style="font-size: 10px;">关于本人</a> <a href="/tags/关于本站/" style="font-size: 10px;">关于本站</a> <a href="/tags/利益/" style="font-size: 10px;">利益</a> <a href="/tags/劳力士/" style="font-size: 10px;">劳力士</a> <a href="/tags/北京/" style="font-size: 10px;">北京</a> <a href="/tags/午夜巴黎/" style="font-size: 10px;">午夜巴黎</a> <a href="/tags/南极/" style="font-size: 10px;">南极</a> <a href="/tags/历史/" style="font-size: 10px;">历史</a> <a href="/tags/反思/" style="font-size: 10px;">反思</a> <a href="/tags/叙利亚/" style="font-size: 10px;">叙利亚</a> <a href="/tags/古体/" style="font-size: 12px;">古体</a> <a href="/tags/叫魂·1768年中国妖术大恐慌/" style="font-size: 10px;">叫魂·1768年中国妖术大恐慌</a> <a href="/tags/哲学/" style="font-size: 10px;">哲学</a> <a href="/tags/唐山/" style="font-size: 10px;">唐山</a> <a href="/tags/国产/" style="font-size: 10px;">国产</a> <a href="/tags/墙/" style="font-size: 12px;">墙</a> <a href="/tags/大同/" style="font-size: 10px;">大同</a> <a href="/tags/太阳能瓦片/" style="font-size: 10px;">太阳能瓦片</a> <a href="/tags/女性/" style="font-size: 10px;">女性</a> <a href="/tags/女神/" style="font-size: 12px;">女神</a> <a href="/tags/存在主义/" style="font-size: 10px;">存在主义</a> <a href="/tags/宁波/" style="font-size: 10px;">宁波</a> <a href="/tags/宏村/" style="font-size: 10px;">宏村</a> <a href="/tags/小诗/" style="font-size: 10px;">小诗</a> <a href="/tags/平衡/" style="font-size: 12px;">平衡</a> <a href="/tags/年末总结/" style="font-size: 10px;">年末总结</a> <a href="/tags/开源/" style="font-size: 12px;">开源</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/微信/" style="font-size: 10px;">微信</a> <a href="/tags/必然/" style="font-size: 10px;">必然</a> <a href="/tags/怀旧情绪/" style="font-size: 10px;">怀旧情绪</a> <a href="/tags/恒山/" style="font-size: 10px;">恒山</a> <a href="/tags/感情/" style="font-size: 10px;">感情</a> <a href="/tags/慕田峪/" style="font-size: 10px;">慕田峪</a> <a href="/tags/房价/" style="font-size: 10px;">房价</a> <a href="/tags/房奴/" style="font-size: 10px;">房奴</a> <a href="/tags/打砸收费站/" style="font-size: 10px;">打砸收费站</a> <a href="/tags/扬州/" style="font-size: 10px;">扬州</a> <a href="/tags/抄袭/" style="font-size: 10px;">抄袭</a> <a href="/tags/抢房/" style="font-size: 10px;">抢房</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/支教/" style="font-size: 10px;">支教</a> <a href="/tags/政变/" style="font-size: 10px;">政变</a> <a href="/tags/数据库/" style="font-size: 12px;">数据库</a> <a href="/tags/整容/" style="font-size: 10px;">整容</a> <a href="/tags/文艺/" style="font-size: 10px;">文艺</a> <a href="/tags/旅行/" style="font-size: 12px;">旅行</a> <a href="/tags/普吉岛/" style="font-size: 10px;">普吉岛</a> <a href="/tags/暗网/" style="font-size: 10px;">暗网</a> <a href="/tags/曼谷/" style="font-size: 10px;">曼谷</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/服务器设置/" style="font-size: 16px;">服务器设置</a> <a href="/tags/朝鲜/" style="font-size: 12px;">朝鲜</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/杂文/" style="font-size: 10px;">杂文</a> <a href="/tags/树莓派/" style="font-size: 12px;">树莓派</a> <a href="/tags/案例分析/" style="font-size: 10px;">案例分析</a> <a href="/tags/梁祝公园/" style="font-size: 10px;">梁祝公园</a> <a href="/tags/武汉/" style="font-size: 10px;">武汉</a> <a href="/tags/江南/" style="font-size: 10px;">江南</a> <a href="/tags/沈园/" style="font-size: 10px;">沈园</a> <a href="/tags/泰国/" style="font-size: 18px;">泰国</a> <a href="/tags/洛阳/" style="font-size: 10px;">洛阳</a> <a href="/tags/津巴布韦/" style="font-size: 10px;">津巴布韦</a> <a href="/tags/清莱/" style="font-size: 10px;">清莱</a> <a href="/tags/滴滴招聘/" style="font-size: 10px;">滴滴招聘</a> <a href="/tags/火箭/" style="font-size: 10px;">火箭</a> <a href="/tags/灵丘/" style="font-size: 10px;">灵丘</a> <a href="/tags/烟台/" style="font-size: 10px;">烟台</a> <a href="/tags/牡丹/" style="font-size: 10px;">牡丹</a> <a href="/tags/特斯拉/" style="font-size: 10px;">特斯拉</a> <a href="/tags/现代/" style="font-size: 20px;">现代</a> <a href="/tags/现代主义/" style="font-size: 10px;">现代主义</a> <a href="/tags/生命起源/" style="font-size: 10px;">生命起源</a> <a href="/tags/男女平等/" style="font-size: 10px;">男女平等</a> <a href="/tags/画作/" style="font-size: 12px;">画作</a> <a href="/tags/百度/" style="font-size: 10px;">百度</a> <a href="/tags/短句/" style="font-size: 10px;">短句</a> <a href="/tags/社会/" style="font-size: 10px;">社会</a> <a href="/tags/社会主义/" style="font-size: 10px;">社会主义</a> <a href="/tags/祝家庄/" style="font-size: 10px;">祝家庄</a> <a href="/tags/祝英台/" style="font-size: 10px;">祝英台</a> <a href="/tags/穆加贝/" style="font-size: 10px;">穆加贝</a> <a href="/tags/穆斯林/" style="font-size: 10px;">穆斯林</a> <a href="/tags/算法/" style="font-size: 16px;">算法</a> <a href="/tags/绍兴/" style="font-size: 10px;">绍兴</a> <a href="/tags/维修/" style="font-size: 10px;">维修</a> <a href="/tags/维基蓝图/" style="font-size: 10px;">维基蓝图</a> <a href="/tags/网络安全/" style="font-size: 12px;">网络安全</a> <a href="/tags/网络屏蔽/" style="font-size: 10px;">网络屏蔽</a> <a href="/tags/美国/" style="font-size: 10px;">美国</a> <a href="/tags/翟欣欣/" style="font-size: 10px;">翟欣欣</a> <a href="/tags/考试/" style="font-size: 10px;">考试</a> <a href="/tags/职业选择/" style="font-size: 10px;">职业选择</a> <a href="/tags/职场/" style="font-size: 10px;">职场</a> <a href="/tags/自我/" style="font-size: 10px;">自我</a> <a href="/tags/自由精神/" style="font-size: 10px;">自由精神</a> <a href="/tags/航空发动机/" style="font-size: 10px;">航空发动机</a> <a href="/tags/芭提雅/" style="font-size: 10px;">芭提雅</a> <a href="/tags/苏东坡/" style="font-size: 10px;">苏东坡</a> <a href="/tags/苏享茂/" style="font-size: 10px;">苏享茂</a> <a href="/tags/苏轼/" style="font-size: 10px;">苏轼</a> <a href="/tags/苹果/" style="font-size: 12px;">苹果</a> <a href="/tags/蜜月/" style="font-size: 10px;">蜜月</a> <a href="/tags/行业分析/" style="font-size: 10px;">行业分析</a> <a href="/tags/词/" style="font-size: 10px;">词</a> <a href="/tags/贪念/" style="font-size: 10px;">贪念</a> <a href="/tags/身份证真伪查询/" style="font-size: 10px;">身份证真伪查询</a> <a href="/tags/辞职/" style="font-size: 10px;">辞职</a> <a href="/tags/选择/" style="font-size: 10px;">选择</a> <a href="/tags/键盘/" style="font-size: 10px;">键盘</a> <a href="/tags/长城/" style="font-size: 10px;">长城</a> <a href="/tags/防狼技巧/" style="font-size: 14px;">防狼技巧</a> <a href="/tags/陌生人/" style="font-size: 10px;">陌生人</a> <a href="/tags/陶渊明/" style="font-size: 10px;">陶渊明</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/马六甲/" style="font-size: 10px;">马六甲</a> <a href="/tags/马来西亚/" style="font-size: 10px;">马来西亚</a> <a href="/tags/高中/" style="font-size: 10px;">高中</a> <a href="/tags/鲁迅/" style="font-size: 10px;">鲁迅</a> <a href="/tags/龙口/" style="font-size: 10px;">龙口</a> <a href="/tags/龙门石窟/" style="font-size: 10px;">龙门石窟</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+      <ul class="widget entry">
+        
+          <li class='link'><a href='http://blog.xiewei.link/'>解伟的博客-陌河</a></li>
+        
+          <li class='link'><a href='http://www.zhangjikai.com/'>张吉凯的个人网站</a></li>
+        
+          <li class='link'><a href='http://zhangwenli.com/'>羡辙杂俎</a></li>
+        
+          <li class='link'><a href='https://xuexb.com/'>前端小武</a></li>
+        
+          <li class='link'><a href='http://www.ruanyifeng.com/blog/'>阮一峰的网络日志</a></li>
+        
+          <li class='link'><a href='https://iyaozhen.com/'>Yao Zhen&#39;s Blog</a></li>
+        
+          <li class='link'><a href='https://www.anotherhome.net/'>Another Home</a></li>
+        
+          <li class='link'><a href='http://notes.hejian.tech/'>Hejian&#39;s Notes</a></li>
+        
+          <li class='link'><a href='http://linglinyp.com/'>Ling&#39;s Blog-折腾吧，少女</a></li>
+        
+          <li class='link'><a href='https://mastertf.github.io/'>Master TF&#39;s BLOG</a></li>
+        
+      </ul>
+  </div>
+
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      Tech begets love，Coding perfect world<br>
+      &copy; 2018 Copyleft，雷全的个人网站<br>
+      ICP 备案号：京-404 Not Found
+    </div>
+  </div>
+
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="https://www.zhihu.com/people/hi.leiquan/" class="mobile-nav-link">Zhihu</a>
+  
+    <a href="https://github.com/leiquan" class="mobile-nav-link">Github</a>
+  
+    <a href="https://www.linkedin.com/in/leiquan/" class="mobile-nav-link">LinkedIn</a>
+  
+    <a href="https://www.facebook.com/hi.leiquan" class="mobile-nav-link">Facebook</a>
+  
+</nav>
+    <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?cccf39e7b4d558bb13167feee6aac56f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
