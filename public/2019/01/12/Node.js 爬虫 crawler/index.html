@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Node.js 爬虫 crawler | 雷全的个人网站</title>
+  <meta name="keywords" content="雷全,雷全的个人网站,雷全的个人主页,雷全的博客,leiquan,leiquan.me,leiquan.website">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="做技术的，无论写没写过，但是一定都听说过：爬虫。 爬虫主要有两类：通用爬虫——主要用于搜索引擎；聚焦爬虫——主要用于特定信息的获取。 搜索引擎的爬虫的基本原理很简单，是个链接就爬；当然了背后的其他技术就很复杂了。聚焦爬虫则要对具体的页面，接口规则做处理，以求把各个场景下的数据都能够爬取下来。 昨晚熬夜学习了下爬虫，把国家统计局的中国行政区划码爬了一波，目前有两万多条数据，还没爬完呢，很多都是超时，">
+<meta name="keywords" content="Node.js,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js 爬虫 crawler">
+<meta property="og:url" content="https://leiquan.website/2019/01/12/Node.js 爬虫 crawler/index.html">
+<meta property="og:site_name" content="雷全的个人网站">
+<meta property="og:description" content="做技术的，无论写没写过，但是一定都听说过：爬虫。 爬虫主要有两类：通用爬虫——主要用于搜索引擎；聚焦爬虫——主要用于特定信息的获取。 搜索引擎的爬虫的基本原理很简单，是个链接就爬；当然了背后的其他技术就很复杂了。聚焦爬虫则要对具体的页面，接口规则做处理，以求把各个场景下的数据都能够爬取下来。 昨晚熬夜学习了下爬虫，把国家统计局的中国行政区划码爬了一波，目前有两万多条数据，还没爬完呢，很多都是超时，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://leiquan.website/2019/01/12/Node.js%20爬虫%20crawler/1.jpg">
+<meta property="og:updated_time" content="2019-01-11T18:57:32.011Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js 爬虫 crawler">
+<meta name="twitter:description" content="做技术的，无论写没写过，但是一定都听说过：爬虫。 爬虫主要有两类：通用爬虫——主要用于搜索引擎；聚焦爬虫——主要用于特定信息的获取。 搜索引擎的爬虫的基本原理很简单，是个链接就爬；当然了背后的其他技术就很复杂了。聚焦爬虫则要对具体的页面，接口规则做处理，以求把各个场景下的数据都能够爬取下来。 昨晚熬夜学习了下爬虫，把国家统计局的中国行政区划码爬了一波，目前有两万多条数据，还没爬完呢，很多都是超时，">
+<meta name="twitter:image" content="https://leiquan.website/2019/01/12/Node.js%20爬虫%20crawler/1.jpg">
+  
+  
+    <link rel="icon" href="/css/images/me.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">雷全的个人网站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to Lei Quan&#39;s Website</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="https://www.skypixel.com/users/leiquan">SkyPixel</a>
+        
+          <a class="main-nav-link" href="https://www.zhihu.com/people/hi.leiquan/">ZhiHu</a>
+        
+          <a class="main-nav-link" href="https://github.com/leiquan">Github</a>
+        
+          <a class="main-nav-link" href="https://www.linkedin.com/in/leiquan/">LinkedIn</a>
+        
+          <a class="main-nav-link" href="https://www.facebook.com/hi.leiquan">Facebook</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <!--  -->
+        <!-- <a id="nav-search-btn" class="nav-icon" title="搜索"></a> -->
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://leiquan.website"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Node.js 爬虫 crawler" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/12/Node.js 爬虫 crawler/" class="article-date">
+  <time datetime="2019-01-11T18:37:08.000Z" itemprop="datePublished">2019-01-12</time>
+</a>
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/服务器/">服务器</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Node.js 爬虫 crawler
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>做技术的，无论写没写过，但是一定都听说过：爬虫。</p>
+<p>爬虫主要有两类：通用爬虫——主要用于搜索引擎；聚焦爬虫——主要用于特定信息的获取。</p>
+<p>搜索引擎的爬虫的基本原理很简单，是个链接就爬；当然了背后的其他技术就很复杂了。聚焦爬虫则要对具体的页面，接口规则做处理，以求把各个场景下的数据都能够爬取下来。</p>
+<p>昨晚熬夜学习了下爬虫，把国家统计局的中国行政区划码爬了一波，目前有两万多条数据，还没爬完呢，很多都是超时，应该是触发率了访问限制， IP 被封了。</p>
+<p><img src="/2019/01/12/Node.js 爬虫 crawler/1.jpg" alt="目前爬到了4级行政区，两万多条数据"></p>
+<a id="more"></a>
+<p>首先我们来看下国家统计局这个行政区划的网址：<a href="http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html" target="_blank" rel="noopener">http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html</a>，我们就是从这里作为入口，开始爬取数据的。</p>
+<p>我们看下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> daoAera = <span class="built_in">require</span>(<span class="string">'../../dao/aera'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> Crawler = <span class="built_in">require</span>(<span class="string">'crawler'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> c = <span class="keyword">new</span> Crawler(&#123;</span><br><span class="line">        rateLimit: <span class="number">2000</span>,</span><br><span class="line">        maxConnections: <span class="number">1</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> go = <span class="function"><span class="keyword">function</span> (<span class="params">url, target, g_province, g_city = null, g_district = null, g_street = null, g_community = null</span>) </span>&#123;</span><br><span class="line">        c.queue([&#123;</span><br><span class="line">            uri: url,</span><br><span class="line"></span><br><span class="line">            callback: <span class="function"><span class="keyword">function</span> (<span class="params">error, res, done</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (error) &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(error);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">let</span> $ = res.$;</span><br><span class="line">                    <span class="keyword">let</span> length = $(target).length;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; length; i++)&#123;</span><br><span class="line"></span><br><span class="line">                        <span class="comment">// 第一级，省级</span></span><br><span class="line">                        <span class="keyword">if</span>(target == <span class="string">'.provincetr td a'</span>)&#123;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">let</span> l = $(target)[i].attribs.href.length;</span><br><span class="line">                            <span class="keyword">let</span> code = $(target)[i].attribs.href.substring(<span class="number">0</span>, l<span class="number">-5</span>);</span><br><span class="line">                            <span class="keyword">let</span> province = $(target)[i].children[<span class="number">0</span>].data</span><br><span class="line"></span><br><span class="line">                            g_province = province;</span><br><span class="line">                            </span><br><span class="line">                            daoAera.add(&#123;</span><br><span class="line">                                code,</span><br><span class="line">                                province</span><br><span class="line">                            &#125;);</span><br><span class="line"></span><br><span class="line">                            go(<span class="string">'http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/'</span> + $(target)[i].attribs.href, <span class="string">'tr.citytr'</span>, province);</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        <span class="comment">// 第二级，市级</span></span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(target == <span class="string">'tr.citytr'</span>)&#123;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">let</span> t = $(target)[i];</span><br><span class="line"></span><br><span class="line">                            <span class="comment">// 第一个 td 拿编号，第二个 td 拿名字</span></span><br><span class="line">                            <span class="keyword">let</span> url = t.children[<span class="number">0</span>].children[<span class="number">0</span>].attribs.href;</span><br><span class="line">                            <span class="keyword">let</span> code = t.children[<span class="number">0</span>].children[<span class="number">0</span>].children[<span class="number">0</span>].data;</span><br><span class="line">                            <span class="keyword">let</span> city = t.children[<span class="number">1</span>].children[<span class="number">0</span>].children[<span class="number">0</span>].data;</span><br><span class="line"></span><br><span class="line">                            daoAera.add(&#123;</span><br><span class="line">                                code,</span><br><span class="line">                                province: g_province,</span><br><span class="line">                                city</span><br><span class="line">                            &#125;);</span><br><span class="line"></span><br><span class="line">                            go(<span class="string">'http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/'</span> + url, <span class="string">'tr.countytr'</span>, g_province, city);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        <span class="comment">// 第三级，区级</span></span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(target == <span class="string">'tr.countytr'</span>)&#123;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">let</span> t = $(target)[i];</span><br><span class="line"></span><br><span class="line">                            <span class="comment">// 这里的数据可能第一行为市辖区，没有 a 标签，但是数据可以入库,</span></span><br><span class="line">                            <span class="keyword">let</span> code;</span><br><span class="line">                            <span class="keyword">let</span> district;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">if</span>(t.children[<span class="number">0</span>].children[<span class="number">0</span>].data)&#123;</span><br><span class="line">                                code = t.children[<span class="number">0</span>].children[<span class="number">0</span>].data;</span><br><span class="line">                                district = t.children[<span class="number">1</span>].children[<span class="number">0</span>].data;</span><br><span class="line"></span><br><span class="line">                                daoAera.add(&#123;</span><br><span class="line">                                    code,</span><br><span class="line">                                    province: g_province,</span><br><span class="line">                                    city: g_city,</span><br><span class="line">                                    district: district</span><br><span class="line">                                &#125;);</span><br><span class="line"></span><br><span class="line">                            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">                                <span class="keyword">let</span> url = t.children[<span class="number">0</span>].children[<span class="number">0</span>].attribs.href;</span><br><span class="line">                                code = t.children[<span class="number">0</span>].children[<span class="number">0</span>].children[<span class="number">0</span>].data;</span><br><span class="line">                                </span><br><span class="line">                                district = t.children[<span class="number">1</span>].children[<span class="number">0</span>].children[<span class="number">0</span>].data;</span><br><span class="line"></span><br><span class="line">                                daoAera.add(&#123;</span><br><span class="line">                                    code,</span><br><span class="line">                                    province: g_province,</span><br><span class="line">                                    city: g_city,</span><br><span class="line">                                    district: district</span><br><span class="line">                                &#125;);</span><br><span class="line"></span><br><span class="line">                                go(<span class="string">'http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/'</span>  + url.substring(<span class="number">3</span>, <span class="number">5</span>)+ <span class="string">'/'</span> + url, <span class="string">'tr.towntr'</span>, g_province, g_city, district);</span><br><span class="line"></span><br><span class="line">                            &#125;</span><br><span class="line"></span><br><span class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(target == <span class="string">'tr.towntr'</span>)&#123;</span><br><span class="line">                            </span><br><span class="line">                            <span class="keyword">let</span> t = $(target)[i];</span><br><span class="line"></span><br><span class="line">                            <span class="comment">// 第一个 td 拿编号，第二个 td 拿名字</span></span><br><span class="line">                            <span class="keyword">let</span> url = t.children[<span class="number">0</span>].children[<span class="number">0</span>].attribs.href;</span><br><span class="line">                            code = t.children[<span class="number">0</span>].children[<span class="number">0</span>].children[<span class="number">0</span>].data;</span><br><span class="line">                            </span><br><span class="line">                            street = t.children[<span class="number">1</span>].children[<span class="number">0</span>].children[<span class="number">0</span>].data;</span><br><span class="line"></span><br><span class="line">                            daoAera.add(&#123;</span><br><span class="line">                                code,</span><br><span class="line">                                province: g_province,</span><br><span class="line">                                city: g_city,</span><br><span class="line">                                district: g_district,</span><br><span class="line">                                street</span><br><span class="line">                            &#125;);</span><br><span class="line"></span><br><span class="line">                            go(<span class="string">'http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/'</span>  + url.substring(<span class="number">3</span>, <span class="number">5</span>)+ <span class="string">'/'</span> + url.substring(<span class="number">7</span>, <span class="number">9</span>)+ <span class="string">'/'</span> + url, <span class="string">'tr.towntr'</span>, g_province, g_city, g_district, street);</span><br><span class="line"></span><br><span class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(target == <span class="string">'tr.villagetr'</span>)&#123;</span><br><span class="line">                            </span><br><span class="line">                            <span class="keyword">let</span> t = $(target)[i];</span><br><span class="line"></span><br><span class="line">                            code = t.children[<span class="number">0</span>].children[<span class="number">0</span>].data;</span><br><span class="line">                            community = t.children[<span class="number">2</span>].children[<span class="number">0</span>].data;</span><br><span class="line">                            </span><br><span class="line">                            daoAera.add(&#123;</span><br><span class="line">                                code,</span><br><span class="line">                                province: g_province,</span><br><span class="line">                                city: g_city,</span><br><span class="line">                                district: g_district,</span><br><span class="line">                                street: g_street,</span><br><span class="line">                                community</span><br><span class="line">                            &#125;);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                done();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 省</span></span><br><span class="line">    go(<span class="string">'http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/index.html'</span>, <span class="string">'.provincetr td a'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//区</span></span><br><span class="line">    <span class="comment">// go('http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/64/6401.html', 'tr.countytr');</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 街道 </span></span><br><span class="line">    <span class="comment">// go('http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/35/07/350702.html', 'tr.towntr');</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 委员会</span></span><br><span class="line">    <span class="comment">// go('http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/35/07/02/350702001.html', 'tr.villagetr');</span></span><br></pre></td></tr></table></figure>
+<p>因为省、市、区（县）、街道（镇）、社区（村）是一个层级结构，所以我们的主体是一个递归函数，这样就能够层层深入的爬取数据；因为每一层层级的数据结构还有区别，但是相同的层级数据结构是一致的，因此我们每一层数据分开处理就好了。</p>
+<p>并且，我们希望记录每一个市是属于哪一个省的，所以我们在调用下一级的时候，把上一级的行政区也传给爬虫，这样写入数据库就能存储关联数据了。</p>
+<p>因此把 go 函数写成参数形式，爬那个 URL，目标数据的类名是啥，这样就能够通用了。最后的几个 go 测试是拿来调试数据结构的，把入口改到某一个级别，直接爬取该层级的数据，格式调试完成后，再从最顶级爬取数据，这样就能一层层的爬下去了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://leiquan.website/2019/01/12/Node.js 爬虫 crawler/" data-id="cjqsen3vl000gv4m23x2mwf56" class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/10/闯红灯与比特币，区块链与共产主义/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">闯红灯与比特币，区块链与共产主义</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <!--PC和WAP自适应版-->
+    <div id="SOHUCS" ></div>
+    <script type="text/javascript">
+    (function(){
+    var appid = 'cysUH4jp6';
+    var conf = 'dbbe8c0b992cfeb371ccd7ecd937e4ae';
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+    </script>
+  </section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">十八岁的我</h3>
+      <ul class="widget entry">
+        <a href='https://leiquan.website/'><img class='leiquan-avatar' src='/css/images/me.jpg' style="width: 60%; height: 60%; border-radius: 50%; margin-left:20%;"></a>
+        <li class='link' style="text-align: center; margin-top:5%;">欢迎访问我的个人网站</li>
+      </ul>
+</div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">文章分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About/">About</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/小诗/">小诗</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构与算法/">数据结构与算法</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行与户外/">旅行与户外</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/水彩/">水彩</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活杂录/">生活杂录</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电子与硬件/">电子与硬件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/科技与时事评论/">科技与时事评论</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/航空/">航空</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/行业与案例分析/">行业与案例分析</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记与观后感/">读书笔记与观后感</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔散文/">随笔散文</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">日期归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">2019年01月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">2018年12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">2018年10月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">2018年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">2018年06月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">2018年04月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">2018年03月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">2018年01月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">2017年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">2017年11月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">2017年10月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">2017年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">2017年08月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">2017年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">2017年06月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017年05月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">2017年04月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">2017年03月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2017年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">2017年01月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">2016年12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">2016年09月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">2015年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">2013年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">2013年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">2012年12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">2012年04月</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云图</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AirPods/" style="font-size: 10px;">AirPods</a> <a href="/tags/Apache/" style="font-size: 10px;">Apache</a> <a href="/tags/BBR加速/" style="font-size: 10px;">BBR加速</a> <a href="/tags/Disqus/" style="font-size: 10px;">Disqus</a> <a href="/tags/Google-Map/" style="font-size: 10px;">Google Map</a> <a href="/tags/HTTPS/" style="font-size: 10px;">HTTPS</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Koa/" style="font-size: 10px;">Koa</a> <a href="/tags/LAMP/" style="font-size: 12px;">LAMP</a> <a href="/tags/LeetCode/" style="font-size: 16px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Macbook/" style="font-size: 10px;">Macbook</a> <a href="/tags/Midnight-in-Paris/" style="font-size: 10px;">Midnight in Paris</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/Ubuntu14/" style="font-size: 10px;">Ubuntu14</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/WePhone/" style="font-size: 10px;">WePhone</a> <a href="/tags/WikiTRIBUNE/" style="font-size: 10px;">WikiTRIBUNE</a> <a href="/tags/about-leiquan-website/" style="font-size: 10px;">about leiquan.website</a> <a href="/tags/about-me/" style="font-size: 10px;">about me</a> <a href="/tags/anaconda/" style="font-size: 10px;">anaconda</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/ip-scaner/" style="font-size: 10px;">ip scaner</a> <a href="/tags/mbox/" style="font-size: 10px;">mbox</a> <a href="/tags/π/" style="font-size: 10px;">π</a> <a href="/tags/上虞/" style="font-size: 10px;">上虞</a> <a href="/tags/世纪佳缘/" style="font-size: 10px;">世纪佳缘</a> <a href="/tags/中医/" style="font-size: 10px;">中医</a> <a href="/tags/云冈石窟/" style="font-size: 10px;">云冈石窟</a> <a href="/tags/云南/" style="font-size: 10px;">云南</a> <a href="/tags/五言/" style="font-size: 10px;">五言</a> <a href="/tags/人妖/" style="font-size: 10px;">人妖</a> <a href="/tags/人工智能/" style="font-size: 10px;">人工智能</a> <a href="/tags/人生思考/" style="font-size: 10px;">人生思考</a> <a href="/tags/传感器/" style="font-size: 10px;">传感器</a> <a href="/tags/传销/" style="font-size: 10px;">传销</a> <a href="/tags/兰亭/" style="font-size: 10px;">兰亭</a> <a href="/tags/共产主义/" style="font-size: 10px;">共产主义</a> <a href="/tags/关于本人/" style="font-size: 10px;">关于本人</a> <a href="/tags/关于本站/" style="font-size: 10px;">关于本站</a> <a href="/tags/利益/" style="font-size: 10px;">利益</a> <a href="/tags/加拿大/" style="font-size: 10px;">加拿大</a> <a href="/tags/劳力士/" style="font-size: 10px;">劳力士</a> <a href="/tags/北京/" style="font-size: 10px;">北京</a> <a href="/tags/区块链/" style="font-size: 10px;">区块链</a> <a href="/tags/午夜巴黎/" style="font-size: 10px;">午夜巴黎</a> <a href="/tags/南极/" style="font-size: 10px;">南极</a> <a href="/tags/历史/" style="font-size: 10px;">历史</a> <a href="/tags/反思/" style="font-size: 10px;">反思</a> <a href="/tags/叙利亚/" style="font-size: 10px;">叙利亚</a> <a href="/tags/古体/" style="font-size: 12px;">古体</a> <a href="/tags/叫魂·1768年中国妖术大恐慌/" style="font-size: 10px;">叫魂·1768年中国妖术大恐慌</a> <a href="/tags/哲学/" style="font-size: 10px;">哲学</a> <a href="/tags/唐山/" style="font-size: 10px;">唐山</a> <a href="/tags/团建/" style="font-size: 10px;">团建</a> <a href="/tags/国产/" style="font-size: 10px;">国产</a> <a href="/tags/埃及/" style="font-size: 10px;">埃及</a> <a href="/tags/墙/" style="font-size: 12px;">墙</a> <a href="/tags/大同/" style="font-size: 10px;">大同</a> <a href="/tags/大疆/" style="font-size: 10px;">大疆</a> <a href="/tags/太阳能瓦片/" style="font-size: 10px;">太阳能瓦片</a> <a href="/tags/女性/" style="font-size: 10px;">女性</a> <a href="/tags/女神/" style="font-size: 12px;">女神</a> <a href="/tags/存在主义/" style="font-size: 10px;">存在主义</a> <a href="/tags/宁波/" style="font-size: 10px;">宁波</a> <a href="/tags/宏村/" style="font-size: 10px;">宏村</a> <a href="/tags/小诗/" style="font-size: 10px;">小诗</a> <a href="/tags/平衡/" style="font-size: 12px;">平衡</a> <a href="/tags/年末总结/" style="font-size: 10px;">年末总结</a> <a href="/tags/开源/" style="font-size: 12px;">开源</a> <a href="/tags/影评/" style="font-size: 10px;">影评</a> <a href="/tags/微信/" style="font-size: 10px;">微信</a> <a href="/tags/必然/" style="font-size: 10px;">必然</a> <a href="/tags/怀旧情绪/" style="font-size: 10px;">怀旧情绪</a> <a href="/tags/恒山/" style="font-size: 10px;">恒山</a> <a href="/tags/感情/" style="font-size: 10px;">感情</a> <a href="/tags/慕田峪/" style="font-size: 10px;">慕田峪</a> <a href="/tags/戴森/" style="font-size: 10px;">戴森</a> <a href="/tags/房价/" style="font-size: 10px;">房价</a> <a href="/tags/房奴/" style="font-size: 10px;">房奴</a> <a href="/tags/打砸收费站/" style="font-size: 10px;">打砸收费站</a> <a href="/tags/扬州/" style="font-size: 10px;">扬州</a> <a href="/tags/抄袭/" style="font-size: 10px;">抄袭</a> <a href="/tags/抢房/" style="font-size: 10px;">抢房</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/支教/" style="font-size: 10px;">支教</a> <a href="/tags/政变/" style="font-size: 10px;">政变</a> <a href="/tags/数据库/" style="font-size: 12px;">数据库</a> <a href="/tags/整容/" style="font-size: 10px;">整容</a> <a href="/tags/文艺/" style="font-size: 10px;">文艺</a> <a href="/tags/旅行/" style="font-size: 10px;">旅行</a> <a href="/tags/日本/" style="font-size: 10px;">日本</a> <a href="/tags/普吉岛/" style="font-size: 10px;">普吉岛</a> <a href="/tags/暗网/" style="font-size: 10px;">暗网</a> <a href="/tags/曼谷/" style="font-size: 10px;">曼谷</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/服务器设置/" style="font-size: 16px;">服务器设置</a> <a href="/tags/服务器运维/" style="font-size: 10px;">服务器运维</a> <a href="/tags/朝鲜/" style="font-size: 12px;">朝鲜</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a> <a href="/tags/杂文/" style="font-size: 10px;">杂文</a> <a href="/tags/树莓派/" style="font-size: 12px;">树莓派</a> <a href="/tags/案例分析/" style="font-size: 10px;">案例分析</a> <a href="/tags/梁祝公园/" style="font-size: 10px;">梁祝公园</a> <a href="/tags/武汉/" style="font-size: 10px;">武汉</a> <a href="/tags/江南/" style="font-size: 10px;">江南</a> <a href="/tags/沈园/" style="font-size: 10px;">沈园</a> <a href="/tags/沙特/" style="font-size: 10px;">沙特</a> <a href="/tags/泰国/" style="font-size: 18px;">泰国</a> <a href="/tags/洛阳/" style="font-size: 10px;">洛阳</a> <a href="/tags/津巴布韦/" style="font-size: 10px;">津巴布韦</a> <a href="/tags/清莱/" style="font-size: 10px;">清莱</a> <a href="/tags/温泉/" style="font-size: 10px;">温泉</a> <a href="/tags/滴滴招聘/" style="font-size: 10px;">滴滴招聘</a> <a href="/tags/澳大利亚/" style="font-size: 10px;">澳大利亚</a> <a href="/tags/火箭/" style="font-size: 10px;">火箭</a> <a href="/tags/灵丘/" style="font-size: 10px;">灵丘</a> <a href="/tags/烟台/" style="font-size: 10px;">烟台</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/牡丹/" style="font-size: 10px;">牡丹</a> <a href="/tags/特斯拉/" style="font-size: 10px;">特斯拉</a> <a href="/tags/现代/" style="font-size: 20px;">现代</a> <a href="/tags/现代主义/" style="font-size: 10px;">现代主义</a> <a href="/tags/生命起源/" style="font-size: 10px;">生命起源</a> <a href="/tags/男女平等/" style="font-size: 10px;">男女平等</a> <a href="/tags/画作/" style="font-size: 12px;">画作</a> <a href="/tags/百度/" style="font-size: 10px;">百度</a> <a href="/tags/短句/" style="font-size: 10px;">短句</a> <a href="/tags/硬件评测/" style="font-size: 12px;">硬件评测</a> <a href="/tags/社会/" style="font-size: 10px;">社会</a> <a href="/tags/社会主义/" style="font-size: 10px;">社会主义</a> <a href="/tags/祝家庄/" style="font-size: 10px;">祝家庄</a> <a href="/tags/祝英台/" style="font-size: 10px;">祝英台</a> <a href="/tags/穆加贝/" style="font-size: 10px;">穆加贝</a> <a href="/tags/穆斯林/" style="font-size: 10px;">穆斯林</a> <a href="/tags/算法/" style="font-size: 16px;">算法</a> <a href="/tags/绍兴/" style="font-size: 10px;">绍兴</a> <a href="/tags/维修/" style="font-size: 10px;">维修</a> <a href="/tags/维基蓝图/" style="font-size: 10px;">维基蓝图</a> <a href="/tags/网络安全/" style="font-size: 12px;">网络安全</a> <a href="/tags/网络屏蔽/" style="font-size: 10px;">网络屏蔽</a> <a href="/tags/美国/" style="font-size: 10px;">美国</a> <a href="/tags/翟欣欣/" style="font-size: 10px;">翟欣欣</a> <a href="/tags/考察/" style="font-size: 10px;">考察</a> <a href="/tags/考试/" style="font-size: 10px;">考试</a> <a href="/tags/职业选择/" style="font-size: 10px;">职业选择</a> <a href="/tags/职场/" style="font-size: 10px;">职场</a> <a href="/tags/自我/" style="font-size: 10px;">自我</a> <a href="/tags/自由精神/" style="font-size: 10px;">自由精神</a> <a href="/tags/航拍/" style="font-size: 12px;">航拍</a> <a href="/tags/航空发动机/" style="font-size: 10px;">航空发动机</a> <a href="/tags/芭提雅/" style="font-size: 10px;">芭提雅</a> <a href="/tags/苏东坡/" style="font-size: 10px;">苏东坡</a> <a href="/tags/苏享茂/" style="font-size: 10px;">苏享茂</a> <a href="/tags/苏轼/" style="font-size: 10px;">苏轼</a> <a href="/tags/苹果/" style="font-size: 12px;">苹果</a> <a href="/tags/蜜月/" style="font-size: 10px;">蜜月</a> <a href="/tags/行业分析/" style="font-size: 10px;">行业分析</a> <a href="/tags/词/" style="font-size: 10px;">词</a> <a href="/tags/贪念/" style="font-size: 10px;">贪念</a> <a href="/tags/身份证真伪查询/" style="font-size: 10px;">身份证真伪查询</a> <a href="/tags/辞职/" style="font-size: 10px;">辞职</a> <a href="/tags/选择/" style="font-size: 10px;">选择</a> <a href="/tags/键盘/" style="font-size: 10px;">键盘</a> <a href="/tags/长城/" style="font-size: 12px;">长城</a> <a href="/tags/防狼技巧/" style="font-size: 14px;">防狼技巧</a> <a href="/tags/陌生人/" style="font-size: 10px;">陌生人</a> <a href="/tags/陶渊明/" style="font-size: 10px;">陶渊明</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/马六甲/" style="font-size: 10px;">马六甲</a> <a href="/tags/马来西亚/" style="font-size: 10px;">马来西亚</a> <a href="/tags/高中/" style="font-size: 10px;">高中</a> <a href="/tags/鲁迅/" style="font-size: 10px;">鲁迅</a> <a href="/tags/龙口/" style="font-size: 10px;">龙口</a> <a href="/tags/龙门石窟/" style="font-size: 10px;">龙门石窟</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+      <ul class="widget entry">
+        
+          <li class='link'><a href='http://blog.xiewei.link/'>解伟的博客-陌河</a></li>
+        
+          <li class='link'><a href='http://www.zhangjikai.com/'>张吉凯的个人网站</a></li>
+        
+          <li class='link'><a href='http://zhangwenli.com/'>羡辙杂俎</a></li>
+        
+          <li class='link'><a href='https://xuexb.com/'>前端小武</a></li>
+        
+          <li class='link'><a href='http://www.ruanyifeng.com/blog/'>阮一峰的网络日志</a></li>
+        
+          <li class='link'><a href='https://iyaozhen.com/'>Yao Zhen&#39;s Blog</a></li>
+        
+          <li class='link'><a href='https://www.anotherhome.net/'>Another Home</a></li>
+        
+          <li class='link'><a href='http://notes.hejian.tech/'>Hejian&#39;s Notes</a></li>
+        
+          <li class='link'><a href='http://linglinyp.com/'>Ling&#39;s Blog-折腾吧，少女</a></li>
+        
+          <li class='link'><a href='https://mastertf.github.io/'>Master TF&#39;s BLOG</a></li>
+        
+          <li class='link'><a href='http://fanyer.github.io/'>樊烨尔的博客</a></li>
+        
+          <li class='link'><a href='http://www.jiangzihao.com'>姜自好</a></li>
+        
+      </ul>
+  </div>
+
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      Tech begets love，Coding perfect world<br>
+      &copy; 2019 Copyleft，雷全的个人网站<br>
+      ICP 备案号：京-404 Not Found
+    </div>
+  </div>
+
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="https://www.skypixel.com/users/leiquan" class="mobile-nav-link">SkyPixel</a>
+  
+    <a href="https://www.zhihu.com/people/hi.leiquan/" class="mobile-nav-link">ZhiHu</a>
+  
+    <a href="https://github.com/leiquan" class="mobile-nav-link">Github</a>
+  
+    <a href="https://www.linkedin.com/in/leiquan/" class="mobile-nav-link">LinkedIn</a>
+  
+    <a href="https://www.facebook.com/hi.leiquan" class="mobile-nav-link">Facebook</a>
+  
+</nav>
+    <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?cccf39e7b4d558bb13167feee6aac56f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
